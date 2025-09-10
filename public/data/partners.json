@@ -1,0 +1,10 @@
+{
+  "title": { "en": "Our Partners", "ar": "شركاؤنا" },
+  "partners": [
+    { "id": 1, "icon": "/partner1.svg" },
+    { "id": 2, "icon": "/partner2.svg" },
+    { "id": 3, "icon": "/partner3.svg" },
+    { "id": 4, "icon": "/partner4.svg" },
+    { "id": 5, "icon": "/partner5.svg" }
+  ]
+}
