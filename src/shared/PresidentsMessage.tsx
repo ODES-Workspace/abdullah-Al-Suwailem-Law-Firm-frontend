@@ -1,11 +1,16 @@
 "use client";
 import { useLang } from "@/context/LangContext";
 import usePresident from "@/hooks/usePresident";
+import { cn } from "@/lib";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function PresidentsMessage() {
+export default function PresidentsMessage({
+  borderBottom = true,
+}: {
+  borderBottom?: boolean;
+}) {
   const { data, isLoading } = usePresident();
   const { lang } = useLang();
   const names = data?.content[lang].name.split(" ");
@@ -14,7 +19,14 @@ export default function PresidentsMessage() {
     return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
   }
   return (
-    <div className="pt-50 pb-8 px-5 border-b-[10px] border-primary-700 bg-neutral-200">
+    <div
+      className={cn(
+        " pb-8 px-5 border-b-[10px] border-primary-700 ",
+        borderBottom
+          ? "border-b-[10px] pt-50 bg-neutral-200"
+          : "border-b-0 pt-8 bg-white"
+      )}
+    >
       <div className="max-w-[1233px] mx-auto flex gap-6">
         <div className="flex flex-col gap-3">
           <div className="bg-primary py-2 px-6 font-semibold rounded-lg w-fit flex gap-[10px]">

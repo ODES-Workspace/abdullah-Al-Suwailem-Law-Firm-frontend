@@ -3,7 +3,7 @@ import useGoals from "@/hooks/useGoals";
 import Image from "next/image";
 import React from "react";
 
-export default function Goals() {
+export default function Goals({ className }: { className: string }) {
   const { data, isLoading } = useGoals();
   const { lang } = useLang();
   const isArabic = lang === "ar";
@@ -15,7 +15,9 @@ export default function Goals() {
   return (
     <div className="px-5">
       <div className=" max-w-[1219px] mx-auto grid gap-4 grid-cols-2  ">
-        <div className="flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl">
+        <div
+          className={` ${className} flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl `}
+        >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
               src={data.vission.icon}
@@ -29,7 +31,9 @@ export default function Goals() {
             <p className="text-sm">{data?.vission[lang].description}</p>
           </div>
         </div>
-        <div className="flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl">
+        <div
+          className={` ${className} flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl`}
+        >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
               src={data.mission.icon}
