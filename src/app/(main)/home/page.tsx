@@ -13,14 +13,14 @@ import React from "react";
 export default function page() {
   return (
     <>
-      <HomeHero />
-      <PresidentsMessage />
+      {/* <HomeHero /> */}
+      {/* <PresidentsMessage />
       <Features />
       <HomeServices />
       <Fields />
       <Accreditations />
       <Partners />
-      <RequestServiceForm />
+      <RequestServiceForm /> */}
     </>
   );
 }

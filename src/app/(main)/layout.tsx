@@ -6,7 +6,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
