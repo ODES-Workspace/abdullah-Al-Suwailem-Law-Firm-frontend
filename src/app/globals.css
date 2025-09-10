@@ -23,3 +23,15 @@ body {
 html[lang="en"] img[alt="field-arrow-icon"] {
   transform: rotate(180deg) !important;
 }
+
+.service-card:nth-child(3n + 2) {
+  background-color: var(--color-secondary);
+
+  p {
+    color: var(--color-primary-950);
+  }
+
+  button {
+    background-color: var(--color-primary-400);
+  }
+}

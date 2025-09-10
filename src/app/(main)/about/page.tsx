@@ -14,8 +14,8 @@ export default function Page() {
 
   return (
     <>
-      <div className="bg-[url('/hero.svg')] h-[528px] bg-no-repeat bg-center bg-cover relative">
-        <div className="py-50 px-5  h-full flex items-center">
+      <div className="bg-[url('/hero.svg')] h-[600px] bg-no-repeat bg-center bg-cover relative">
+        <div className="pt-50 pb-30 px-5  h-full flex items-center">
           <div className="max-w-[1233px] mx-auto w-full flex justify-center items-center h-full text-5xl font-bold text-white text-center">
             {data.title[lang]}
           </div>

@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "en": "Legal Consultation",
+      "ar": "الاستشارات القانونية"
+    }
+  },
+  {
+    "id": 2,
+    "title": {
+      "en": "Bankruptcy Applications",
+      "ar": "طلبات الإفلاس"
+    }
+  },
+  {
+    "id": 3,
+    "title": {
+      "en": "Debt Collection",
+      "ar": "تحصيل الديون"
+    }
+  },
+  {
+    "id": 4,
+    "title": {
+      "en": "Inheritance & Estates",
+      "ar": "التركات"
+    }
+  },
+  {
+    "id": 5,
+    "title": {
+      "en": "Corporate Governance",
+      "ar": "حوكمة الشركات"
+    }
+  },
+  {
+    "id": 6,
+    "title": {
+      "en": "Litigation",
+      "ar": "التقاضي"
+    }
+  },
+  {
+    "id": 7,
+    "title": {
+      "en": "Contract Drafting",
+      "ar": "صياغة العقود"
+    }
+  },
+  {
+    "id": 8,
+    "title": {
+      "en": "Trademark Registration",
+      "ar": "تسجيل العلامات التجارية"
+    }
+  },
+  {
+    "id": 9,
+    "title": {
+      "en": "Employment Regulations",
+      "ar": "لوائح تنظيم العمل"
+    }
+  },
+  {
+    "id": 10,
+    "title": {
+      "en": "Legal Mediation",
+      "ar": "الوساطة القانونية"
+    }
+  },
+  {
+    "id": 11,
+    "title": {
+      "en": "Company Formation",
+      "ar": "تأسيس الشركات"
+    }
+  },
+  {
+    "id": 12,
+    "title": {
+      "en": "Legal Translation",
+      "ar": "الترجمة القانونية"
+    }
+  },
+  {
+    "id": 13,
+    "title": {
+      "en": "Legal Department Establishment",
+      "ar": "تأسيس الإدارات القانونية"
+    }
+  },
+  {
+    "id": 14,
+    "title": {
+      "en": "Legal Technology",
+      "ar": "التقنية القانونية"
+    }
+  }
+]
