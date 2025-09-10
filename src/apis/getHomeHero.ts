@@ -1,4 +1,4 @@
-import axiosInstance from "@/lib/axiosInstance";
+import { axiosInstance } from "@/lib";
 
 export default async function getHomeHero() {
   try {
