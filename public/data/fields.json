@@ -1,0 +1,207 @@
+{
+  "title": {
+    "en": "Fahad Al-Suwailem Company Fields",
+    "ar": "مجالات شركة فهد السويلم"
+  },
+  "sub-title": {
+    "en": "Extensive experience in various branches of law with a proven track record of successful cases:",
+    "ar": "خبرة واسعة في مختلف فروع القانون مع سجل حافل من القضايا الناجحة:"
+  },
+  "fields": [
+    {
+      "id": 1,
+      "title": {
+        "en": "Commercial Law",
+        "ar": "القانون التجاري"
+      },
+      "icon": "/field1.svg",
+      "description": {
+        "en": "Commercial law deals with the regulation of commercial transactions and economic activities between individuals and companies. It is the cornerstone that ensures market stability and the prosperity of the business environment within the Kingdom of Saudi Arabia. Through it, commercial contracts are regulated, traders' rights are protected, and the relationship between transacting parties is controlled in accordance with local systems and applicable regulations.",
+        "ar": "يُعنى القانون التجاري بتنظيم المعاملات التجارية والأنشطة الاقتصادية بين الأفراد والشركات، وهو الركيزة الأساسية التي تضمن استقرار الأسواق وازدهار بيئة الأعمال داخل المملكة العربية السعودية. ومن خلاله يتم تنظيم العقود التجارية، وحماية حقوق التجار، وضبط العلاقة بين الأطراف المتعاملة بما يتوافق مع الأنظمة المحلية واللوائح المعمول بها."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 2,
+      "title": {
+        "en": "Civil Law",
+        "ar": "القانون المدني"
+      },
+      "icon": "/field2.svg",
+      "description": {
+        "en": "Civil law in Saudi Arabia governs private relationships and personal rights, covering a wide range of civil transactions including contracts, obligations, and responsibilities. It plays a key role in safeguarding individual rights and ensuring the stability of legal dealings.",
+        "ar": "القانون المدني في المملكة العربية السعودية ينظم العلاقات الخاصة والحقوق الفردية، ويشمل مختلف المعاملات المدنية مثل العقود والالتزامات والمسؤوليات. وهو يُعتبر أساساً مهماً للحفاظ على حقوق الأفراد وضمان استقرار التعاملات."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 3,
+      "title": {
+        "en": "Real Estate Regulations",
+        "ar": "الأنظمة العقارية"
+      },
+      "icon": "/field3.svg",
+      "description": {
+        "en": "Real estate regulations in Saudi Arabia focus on organizing ownership, sales, and leases of properties in line with national policies. They aim to regulate real estate dealings to ensure market transparency, protect investors’ rights, and maintain growth and development in the real estate sector.",
+        "ar": "تُركز الأنظمة العقارية في المملكة العربية السعودية على تنظيم الملكيات والبيع والإيجار بما يتماشى مع السياسات الوطنية. وتهدف إلى تنظيم التعاملات العقارية لضمان الشفافية في السوق، وحماية حقوق المستثمرين، والحفاظ على نمو وتطور القطاع العقاري."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 4,
+
+      "title": {
+        "en": "Environmental Law",
+        "ar": "القانون البيئي"
+      },
+      "icon": "/field4.svg",
+      "description": {
+        "en": "Environmental law regulates activities that affect the environment, aiming to promote sustainability and balance between development and natural resource protection. It ensures compliance with standards that help preserve Saudi Arabia’s environment and biodiversity.",
+        "ar": "يعنى القانون البيئي بتنظيم الأنشطة التي تؤثر على البيئة، ويهدف إلى تعزيز الاستدامة وتحقيق التوازن بين التنمية الاقتصادية والحفاظ على الموارد الطبيعية. وهو يضمن الالتزام بالمعايير التي تساعد في حماية البيئة والتنوع الحيوي في المملكة."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 5,
+
+      "title": {
+        "en": "Labor Law",
+        "ar": "القانون العمالي"
+      },
+      "icon": "/field5.svg",
+      "description": {
+        "en": "Labor law regulates the relationship between workers and employers within Saudi Arabia. It ensures the protection of workers’ rights, regulates contracts, working conditions, and provides mechanisms for dispute resolution, thereby ensuring a balanced and fair labor market.",
+        "ar": "القانون العمالي هو النظام الذي ينظم العلاقة بين العامل وصاحب العمل داخل المملكة العربية السعودية. ويهدف إلى حماية حقوق العمال، وتنظيم العقود وظروف العمل، وتوفير آليات لحل النزاعات بما يضمن سوق عمل متوازن وعادل."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 6,
+
+      "title": {
+        "en": "Administrative Law",
+        "ar": "القانون الإداري"
+      },
+      "icon": "/field6.svg",
+      "description": {
+        "en": "Administrative law governs the relationship between individuals or companies and government authorities. It ensures fairness, regulates administrative procedures, and provides a framework for challenging decisions, thus safeguarding rights and ensuring transparent governance.",
+        "ar": "القانون الإداري يختص بتنظيم العلاقة بين الأفراد أو الشركات من جهة والسلطات الحكومية من جهة أخرى، ويهدف إلى تحقيق العدالة وتنظيم الإجراءات الإدارية وتوفير إطار للطعن في القرارات، بما يحمي الحقوق ويضمن الشفافية في التعامل مع الجهات الرسمية."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 7,
+
+      "title": {
+        "en": "Criminal Law",
+        "ar": "القانون الجنائي"
+      },
+      "icon": "/field7.svg",
+      "description": {
+        "en": "Criminal law defines crimes and penalties to ensure justice and public safety. It plays a vital role in protecting society by punishing unlawful acts and deterring future crimes in accordance with Saudi Arabia’s legal system.",
+        "ar": "القانون الجنائي هو الفرع الذي يحدد الجرائم والعقوبات المقررة لها، ويهدف إلى تحقيق العدالة وحماية المجتمع من خلال معاقبة الأفعال غير المشروعة وردع الجرائم المستقبلية وفقاً للنظام القانوني المعمول به في المملكة."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 8,
+
+      "title": {
+        "en": "Corporate Law",
+        "ar": "قانون الشركات"
+      },
+      "icon": "/field8.svg",
+      "description": {
+        "en": "Corporate law provides the framework for establishing companies, regulating their governance, and defining shareholders’ rights and obligations. It supports business growth and investment by ensuring compliance with Saudi Arabia’s corporate regulations.",
+        "ar": "قانون الشركات يوفر الإطار القانوني لتأسيس الشركات وإدارة شؤونها، ويحدد حقوق والتزامات المساهمين، ويدعم نمو الأعمال وجذب الاستثمارات من خلال ضمان الالتزام بأنظمة الشركات داخل المملكة."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 9,
+
+      "title": {
+        "en": "Intellectual Property Law",
+        "ar": "قانون الملكية الفكرية"
+      },
+      "icon": "/field9.svg",
+      "description": {
+        "en": "Intellectual property law protects innovation and creativity by regulating copyrights, trademarks, and patents. It fosters innovation and business competitiveness, contributing to Saudi Arabia’s knowledge-based economy.",
+        "ar": "قانون الملكية الفكرية يضمن حماية حقوق الابتكار والإبداع من خلال تنظيم حقوق التأليف والعلامات التجارية وبراءات الاختراع، وهو عامل أساسي في تشجيع الابتكار وزيادة التنافسية في الأعمال."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 10,
+
+      "title": {
+        "en": "Arbitration and Mediation",
+        "ar": "التحكيم والوساطة"
+      },
+      "icon": "/field10.svg",
+      "description": {
+        "en": "Arbitration and mediation provide alternative methods for dispute resolution outside traditional courts. These mechanisms promote faster, cost-effective settlements while maintaining confidentiality and supporting commercial stability.",
+        "ar": "التحكيم والوساطة يمثلان وسائل بديلة لحل النزاعات بعيداً عن المحاكم التقليدية، حيث يقدمان حلولاً سريعة وفعّالة من حيث التكلفة مع الحفاظ على السرية وتعزيز الاستقرار التجاري."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    },
+    {
+      "id": 11,
+
+      "title": {
+        "en": "Personal Status and Inheritance",
+        "ar": "الأحوال الشخصية والميراث"
+      },
+      "icon": "/field11.svg",
+      "description": {
+        "en": "Personal status and inheritance law regulates family matters including marriage, divorce, custody, and inheritance in accordance with Islamic principles and Saudi law. It ensures justice and fairness in family-related rights and obligations.",
+        "ar": "الأحوال الشخصية والميراث تختص بالقضايا التي تتعلق بالأسرة مثل الزواج والطلاق والحضانة والميراث بما يتماشى مع الشريعة الإسلامية والأنظمة السعودية، وتضمن تحقيق العدالة والإنصاف في الحقوق والواجبات الأسرية."
+      },
+      "href": "/",
+      "link-text": {
+        "en": "Read More",
+        "ar": "عرض المزيد"
+      }
+    }
+  ]
+}

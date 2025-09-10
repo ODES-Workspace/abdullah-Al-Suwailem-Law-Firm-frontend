@@ -1,0 +1,24 @@
+{
+  "vission": {
+    "en": {
+      "title": "Our Vision",
+      "description": "A vision to become one of the leading law firms in the Kingdom of Saudi Arabia, by providing quality services that embody justice and align with the aspirations of Saudi Vision 2030 towards a fair and transparent legal environment that enhances trust and protects rights."
+    },
+    "ar": {
+      "title": "رؤيتنا",
+      "description": "رؤيتًا أن نصبح أحد أبرز الشركات الرائدة في المملكة العربية السعودية في مجال المحاماة والاستشارات القانونية، من خلال تقديم خدمات نوعية تجسد العدالة، وتواكب تطلعات رؤية المملكة 2030 نحو بيئة قانونية عادلة وشفافة تعزز الثقة وتحمي الحقوق."
+    },
+    "icon": "/vission.svg"
+  },
+  "mission": {
+    "en": {
+      "title": "Our Mission",
+      "description": "We strive to empower our clients to face their legal challenges with confidence, by providing specialized solutions based on deep knowledge of Saudi regulations and international standards, with a commitment to the highest levels of professionalism, confidentiality, and transparency, to be the ideal legal partner for individuals and businesses inside and outside the Kingdom."
+    },
+    "ar": {
+      "title": "رسالتنا",
+      "description": "نسعى إلى تمكين عملائنا من مواجهة تحدياتهم القانونية بثقة، عبر تقديم حلول متخصصة مبنية على المعرفة العميقة بالأنظمة السعودية والمعايير الدولية، مع الالتزام بأعلى درجات الاحترافية والسرية والشفافية، لنكون الشريك القانوني الأمثل للأفراد وقطاع الأعمال داخل المملكة وخارجها."
+    },
+    "icon": "/mission.svg"
+  }
+}

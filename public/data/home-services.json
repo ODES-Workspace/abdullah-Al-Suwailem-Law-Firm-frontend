@@ -1,0 +1,92 @@
+{
+  "title": {
+    "en": "Fahad Al-Suwailem Services",
+    "ar": "خدمات شركة فهد السويلم"
+  },
+  "sub-title": {
+    "en": "We offer a comprehensive range of specialized legal services to meet all your legal needs",
+    "ar": "نقدم مجموعة شاملة من الخدمات القانونية المتخصصة لتلبية جميع احتياجاتكم القانونية"
+  },
+  "link": {
+    "href": "/services",
+    "text": {
+      "en": "View All Services",
+      "ar": "عرض كل الخدمات"
+    }
+  },
+
+  "services": [
+    {
+      "id": 0,
+      "icon": "/home-service1.svg",
+      "title": {
+        "en": "Corporate Law",
+        "ar": "التقاضي"
+      },
+      "description": {
+        "en": "We support our clients at all stages of litigation before the courts, whether commercial, civil, or criminal cases, focusing on protecting clients' rights and achieving the best legal outcomes.",
+        "ar": "نحن ندعم عملاءنا في جميع مراحل التقاضي أمام المحاكم، سواء كانت قضايا تجارية، مدنية، أو جنائية، مع التركيز على حماية حقوق العملاء وتحقيق أفضل النتائج القانونية."
+      }
+    },
+    {
+      "id": 1,
+      "icon": "/home-service2.svg",
+      "title": {
+        "en": "Litigation",
+        "ar": "طلبات الإفلاس"
+      },
+      "description": {
+        "en": "We assist businesses and individuals in handling bankruptcy cases, including preparing legal filings, managing procedures, and negotiating with creditors to ensure rights protection and achieve the best possible outcomes.",
+        "ar": "نساعد الشركات والأفراد على التعامل مع حالات الإفلاس بما يشمل إعداد الطلبات القانونية، إدارة الإجراءات، والتفاوض مع الدائنين لضمان حماية الحقوق وتحقيق أفضل النتائج الممكنة."
+      }
+    },
+    {
+      "id": 2,
+      "icon": "/home-service3.svg",
+      "title": {
+        "en": "Bankruptcy Filings",
+        "ar": "تأسيس الشركات"
+      },
+      "description": {
+        "en": " We provide comprehensive services for company formation of various types, from selecting the appropriate legal structure to registering the company and preparing all necessary legal documents.",
+        "ar": "نقدم خدمات متكاملة لتأسيس الشركات بمختلف أنواعها، من اختيار الشكل القانوني المناسب إلى تسجيل الشركة وإعداد جميع المستندات القانونية اللازمة."
+      }
+    },
+    {
+      "id": 3,
+      "icon": "/home-service4.svg",
+      "title": {
+        "en": "Company Formation",
+        "ar": "التركات"
+      },
+      "description": {
+        "en": " We handle all procedures related to wills and inheritance, including preparing legal documents and resolving disputes, to ensure the fair and legal distribution of rights.",
+        "ar": "ندير جميع الإجراءات المتعلقة بالتركات والميراث، بما يشمل إعداد الوثائق القانونية وحل النزاعات، لضمان توزيع الحقوق بطريقة عادلة وقانونية."
+      }
+    },
+    {
+      "id": 4,
+      "icon": "/home-service5.svg",
+      "title": {
+        "en": "Estate Settlements",
+        "ar": "الوساطة القانونية"
+      },
+      "description": {
+        "en": " We offer legal mediation services to resolve disputes outside the court system, focusing on reaching fair and satisfactory solutions for all parties quickly and efficiently.",
+        "ar": "نقدم خدمات الوساطة القانونية لتسوية النزاعات خارج نطاق المحاكم، مع التركيز على الوصول إلى حلول عادلة ومرضية لجميع الأطراف بسرعة وكفاءة."
+      }
+    },
+    {
+      "id": 5,
+      "icon": "/home-service6.svg",
+      "title": {
+        "en": "Legal Mediation",
+        "ar": "تسجيل العلامات التجارية"
+      },
+      "description": {
+        "en": " We assist in registering and protecting trademarks to ensure intellectual property rights, following up on all necessary legal procedures to protect the mark both locally and internationally.",
+        "ar": "نساعد في تسجيل وحماية العلامات التجارية لضمان حقوق الملكية الفكرية، مع متابعة جميع الإجراءات القانونية المطلوبة لحماية العلامة على المستويين المحلي والدولي."
+      }
+    }
+  ]
+}

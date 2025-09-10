@@ -1,0 +1,23 @@
+[
+  {
+    "image": "/home-feature1.svg",
+    "title": {
+      "en": "Reliability",
+      "ar": "موثوقية"
+    }
+  },
+  {
+    "image": "/home-feature2.svg",
+    "title": {
+      "en": "Professionalism",
+      "ar": "مهنية"
+    }
+  },
+  {
+    "image": "/home-feature3.svg",
+    "title": {
+      "en": "Commitment",
+      "ar": "إلــــتزام"
+    }
+  }
+]

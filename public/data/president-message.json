@@ -1,0 +1,24 @@
+{
+  "image": "/president.svg",
+  "link": "/about",
+  "content": {
+    "en": {
+      "sub-title": "President's Message",
+      "name": "Fahad Al-Suwailem",
+      "role": "Chairman of the Board",
+      "message-title": "In the name of Allah, the Most Gracious, the Most Merciful",
+      "message-first": "All praise is due to Allah, the Lord of the Worlds, and may peace and blessings be upon the most honorable of prophets and messengers, our Prophet Muhammad, and upon his family and companions. It is my pleasure to welcome you to the official website of Fahad Al-Suwailem Law Firm and Legal Consultations, where we present to you solid expertise and a renewed vision aimed at providing legal and consulting services characterized by professionalism, accuracy, and commitment to the highest standards.",
+      "message-second": "Our firm was established on a firm conviction that justice is not merely legal texts but a message and responsibility that requires us to exert effort, thought, and expertise to protect rights and defend interests. From this standpoint, we strive diligently to be true partners for our clients, providing them with comprehensive legal solutions that meet their aspirations and support the stability of their businesses.",
+      "message-third": "Our vision lies in blending authenticity and knowledge of Saudi systems with openness to the best global legal practices to create a unique model that combines deep trust in our roots and national laws with keeping pace with modern developments in the fields of law and consultations."
+    },
+    "ar": {
+      "sub-title": "كلمة الرئيس",
+      "name": "فهــــد السويلـــــــم",
+      "role": "رئيس مجلس الإدارة",
+      "message-title": "بسم الله الرحمن الرحيم",
+      "message-first": "الحمد لله رب العالمين، والصلاة والسلام على أشرف الأنبياء والمرسلين، نبينا محمد وعلى آله وصحبه أجمعين، أما يسعدني أن أرحب بكم في الموقع الرسمي لشركة فهد السويلم للمحاماة والاستشارات القانونية، حيث نضع بين أيديكم خبرة راسخة ورؤية متجددة تهدف إلى تقديم خدمات قانونية واستشارية تتسم بالاحترافية والدقة والالتزام بأعلى المعايير.",
+      "message-second": "لقد تأسست شركتنا على قناعة راسخة بأن العدالة ليست مجرد نصوص قانونية، بل هي رسالة ومسؤولية، تتطلب منا بذل الجهد والفكر والخبرة لحماية الحقوق والدفاع عن المصالح. ومن هذا المنطلق، نسعى جاهدين إلى أن نكون شركاء حقيقيين لعملائنا، نمدهم بالحلول القانونية المتكاملة التي تواكب تطلعاتهم وتدعم استقرار أعمالهم.",
+      "message-third": "إن رؤيتنا تكمن في مزج الأصالة والمعرفة بالنظم السعودية، مع الانفتاح على أفضل الممارسات القانونية العالمية، لنصنع نموذجًا فريدًا يجمع بين الثقة العميقة بجذورنا وقوانيننا الوطنية، وبين مواكبة التطورات الحديثة في مجالات القانون والاستشارات."
+    }
+  }
+}
