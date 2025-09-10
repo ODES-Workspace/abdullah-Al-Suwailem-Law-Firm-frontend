@@ -187,7 +187,7 @@ export default function RequestServiceForm() {
           </div>
         </div>
         <div className="flex gap-2 justify-center itens-center">
-          <div>تابعنا على</div>
+          <div>{lang === "ar" ? "تابعنا على" : "Follow us on"}</div>
           <a href="">
             <Image src="/instagram.svg" width={20} height={20} alt="socials" />
           </a>
