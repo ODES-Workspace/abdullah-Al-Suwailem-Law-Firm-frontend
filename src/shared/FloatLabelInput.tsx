@@ -16,7 +16,6 @@ export default function FloatLabelInput({
   id,
   className,
   format,
-  formatLang,
   ...props
 }: FloatLabelInputProps) {
   const [isFocused, setIsFocused] = useState(false);
@@ -28,17 +27,16 @@ export default function FloatLabelInput({
         <label
           htmlFor={id}
           className={cn(
-            "absolute -top-4  text-2xl transition-all duration-200",
-            shrinkLabel ? "top-[-1.6875rem] text-xl text-gray" : "text-black"
+            "absolute -top-4  text-lg transition-all duration-200",
+            shrinkLabel ? "top-[-1.6875rem] text-md text-gray" : "text-black"
           )}
         >
           <span>{label} </span>
           {format && (
             <span
               className={cn(
-                "text-gray text-xl transition-all duration-200",
-                shrinkLabel ? "opacity-0" : "opacity-100",
-                formatLang === "en" ? "font-roboto" : ""
+                "text-gray text-sm transition-all duration-200",
+                shrinkLabel ? "opacity-0" : "opacity-100"
               )}
             >
               {format}

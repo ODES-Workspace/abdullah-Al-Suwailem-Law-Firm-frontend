@@ -42,7 +42,7 @@ const links = [
 export default function Header() {
   const { lang, setLang } = useLang();
   return (
-    <div className="max-w-[1233px] shadow-primary mx-auto py-5 px-25 flex justify-between items-center bg-white fixed z-10 w-full right-0 left-0 top-18 rounded-2xl">
+    <div className="max-w-[1233px] shadow-primary mx-auto py-5 px-25 flex justify-between items-center bg-white fixed z-10 w-full right-0 left-0 top-12 rounded-2xl">
       <Image src="/logo.svg" alt="logo" width={87} height={87} />
       <div className="flex gap-6 text-lg ">
         {links.map((link) => (

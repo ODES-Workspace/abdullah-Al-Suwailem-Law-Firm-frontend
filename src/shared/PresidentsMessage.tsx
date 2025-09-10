@@ -45,13 +45,13 @@ export default function PresidentsMessage() {
               ))}
             </div>
             <div className="text-lg font-extrabold relative w-fit">
-              {data.content[lang].role}
+              <div className="relative z-1">{data.content[lang].role}</div>
               <Image
                 src={"/line.svg"}
                 width={141}
                 height={14}
                 alt="line"
-                className={`top-[5px] absolute -z-1 ${
+                className={`top-[5px] absolute ${
                   lang === "ar" ? "left-0" : "right-0 rotate-180"
                 } `}
               />

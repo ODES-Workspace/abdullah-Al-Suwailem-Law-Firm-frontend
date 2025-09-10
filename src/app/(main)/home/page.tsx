@@ -1,4 +1,10 @@
-import { Features, Fields, HomeHero, PresidentsMessage } from "@/shared";
+import {
+  Features,
+  Fields,
+  HomeHero,
+  PresidentsMessage,
+  RequestServiceForm,
+} from "@/shared";
 import Accreditations from "@/shared/Accreditations";
 import HomeServices from "@/shared/HomeServices";
 import Partners from "@/shared/Partners";
@@ -14,6 +20,7 @@ export default function page() {
       <Fields />
       <Accreditations />
       <Partners />
+      <RequestServiceForm />
     </>
   );
 }
