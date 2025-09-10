@@ -3,7 +3,7 @@ import useGoals from "@/hooks/useGoals";
 import Image from "next/image";
 import React from "react";
 
-export default function Goals({ className }: { className: string }) {
+export default function Goals({ className }: { className?: string }) {
   const { data, isLoading } = useGoals();
   const { lang } = useLang();
   const isArabic = lang === "ar";
@@ -14,9 +14,9 @@ export default function Goals({ className }: { className: string }) {
 
   return (
     <div className="px-5">
-      <div className=" max-w-[1219px] mx-auto grid gap-4 grid-cols-2  ">
+      <div className=" max-w-[1219px] mx-auto grid gap-4 lg:grid-cols-2  ">
         <div
-          className={` ${className} flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl `}
+          className={` ${className} flex flex-col lg:flex-row text-center lg:text-start  gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl `}
         >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
@@ -32,7 +32,7 @@ export default function Goals({ className }: { className: string }) {
           </div>
         </div>
         <div
-          className={` ${className} flex gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl`}
+          className={` ${className} flex flex-col lg:flex-row text-center lg:text-start gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl`}
         >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image

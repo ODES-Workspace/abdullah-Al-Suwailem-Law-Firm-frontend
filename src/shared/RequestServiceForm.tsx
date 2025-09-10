@@ -28,12 +28,18 @@ export default function RequestServiceForm() {
   };
 
   return (
-    <div className="py-30 pb-5 px-5 bg-[linear-gradient(rgba(243,244,246,0.9),rgba(243,244,246,0.9)),url('/req-form.png')]  bg-cover bg-no-repeat bg-center mt-20">
+    <div className="py-10 lg:py-30 pb-5 px-5 bg-[linear-gradient(rgba(243,244,246,0.9),rgba(243,244,246,0.9)),url('/req-form.png')]  bg-cover bg-no-repeat bg-center">
       <div className="max-w-[1233px] mx-auto flex flex-col gap-[54px] ">
         <div className="flex justify-center items-center gap-3 flex-col w-full text-center">
           <div className="flex gap-2" dir="rtl">
-            <Image src="/line3.svg" alt="logo" width={100} height={50} />
-            <h1 className="text-7xl text-primary-950 mb-3">
+            <Image
+              src="/line3.svg"
+              alt="logo"
+              width={100}
+              height={50}
+              className="hidden md:block"
+            />
+            <h1 className=" text-3xl lg:text-7xl text-primary-950 mb-3">
               {lang === "ar"
                 ? "لطلـــــب الخدمــــــــــات"
                 : "Request Services"}
@@ -43,7 +49,7 @@ export default function RequestServiceForm() {
               alt="logo"
               width={100}
               height={50}
-              className="rotate-180"
+              className="rotate-180 hidden md:block"
             />
           </div>
           <p className="text-primary-500 max-w-[600px] ">
@@ -58,7 +64,7 @@ export default function RequestServiceForm() {
         >
           <div className="grid grid-cols-2 gap-[30px] ">
             {/* name */}
-            <div className="gap-1 flex flex-col">
+            <div className="gap-1 flex flex-col col-span-2 lg:col-span-1">
               <FloatLabelInput
                 label={`${
                   lang === "ar" ? "ادخل الاسم بالكامل" : "Enter full name"
@@ -79,7 +85,7 @@ export default function RequestServiceForm() {
               )}
             </div>
             {/* email */}
-            <div className="gap-1 flex flex-col">
+            <div className="gap-1 flex flex-col col-span-2 lg:col-span-1">
               <FloatLabelInput
                 label={`${
                   lang === "ar" ? "ادخل البريد الالكتروني" : "Enter email"
@@ -156,12 +162,12 @@ export default function RequestServiceForm() {
 
           <button
             type="submit"
-            className="max-w-[285px] rounded-4xl border py-3 cursor-pointer text-primary-900 text-2xl"
+            className="max-w-[285px] rounded-4xl border py-1.5 lg:py-3 cursor-pointer text-primary-900 text-lg lg:text-2xl"
           >
             {lang === "ar" ? "ارسال" : " Send"}
           </button>
         </form>
-        <div className="flex gap-[128px] justify-center items-center">
+        <div className="flex flex-col gap-3 lg:flex-row lg:gap-[128px] justify-center items-center">
           <div className="flex gap-3 items-center text-sm">
             {lang === "ar" ? (
               <div>12 شارع شهاب بن عبد الله,بريدة</div>

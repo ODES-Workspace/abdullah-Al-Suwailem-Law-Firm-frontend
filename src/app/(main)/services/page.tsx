@@ -27,18 +27,20 @@ export default function Page() {
 
   return (
     <>
-      <div className="bg-[url('/hero.svg')] h-[600px] bg-no-repeat bg-center bg-cover relative">
-        <div className="pt-50 pb-30 px-5  h-full flex items-center">
+      <div className="bg-[url('/hero.svg')] md:h-[300px] lg:h-[600px] bg-no-repeat bg-center bg-cover relative">
+        <div className="pt-30 lg:pt-50 pb-20 lg:pb-30 px-5  h-full flex items-center">
           <div className="max-w-[1233px] mx-auto w-full flex flex-col justify-center items-center h-full   text-white text-center gap-4">
-            <div className="text-5xl font-bold">{data.title[lang]}</div>
-            <div className="max-w-[530px] text-3xl ">
+            <div className="text-3xl lg:text-5xl font-bold">
+              {data.title[lang]}
+            </div>
+            <div className="max-w-[530px] text-xl lg:text-3xl ">
               {data["sub-titles"][lang]}
             </div>
           </div>
         </div>
       </div>
       <div className="py-20 px-5">
-        <div className="max-w-[1233px] mx-auto  grid grid-cols-3 gap-6">
+        <div className="max-w-[1233px] mx-auto  grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.services.map((s: Service) => {
             return (
               <div

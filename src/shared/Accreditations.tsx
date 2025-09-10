@@ -23,12 +23,12 @@ export default function Accreditations() {
     return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
   }
   return (
-    <div className="py-[90px] px-5 bg-neutral-200">
+    <div className="py-10 lg:py-[90px] px-5 bg-neutral-200">
       <div className="max-w-[1233px] mx-auto w-full gap-12 flex flex-col">
-        <div className="text-5xl text-center font-bold text-primary-950">
+        <div className="text-3xl lg:text-5xl text-center font-bold text-primary-950">
           {data.title[lang]}
         </div>
-        <div className="grid grid-cols-4 gap-[25px]">
+        <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
           {data.accreditations.map((a: Accreditation) => {
             return (
               <div key={a.id} className="flex flex-col ">

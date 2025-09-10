@@ -41,9 +41,11 @@ export default function Fields() {
  bg-no-repeat bg-cover bg-center"
     >
       <div className="max-w-[1233px] mx-auto w-full flex gap-8 flex-col overflow-hidden">
-        <div className="flex justify-between gap-2 items-center">
-          <div className="flex gap-2 flex-col text-white">
-            <div className="text-4xl font-bold ">{data.title[lang]}</div>
+        <div className="flex flex-col lg:flex-row justify-between gap-4 lg:gap-2 items-center">
+          <div className="flex gap-4 lg:gap-2 flex-col text-white text-center lg:text-start">
+            <div className="text-3xl lg:text-4xl font-bold ">
+              {data.title[lang]}
+            </div>
             <p className="text-lg">{data["sub-title"][lang]}</p>
           </div>
           <div className="flex gap-6">
@@ -78,14 +80,15 @@ export default function Fields() {
             speed={1000}
             loop={true}
             breakpoints={{
-              320: { slidesPerView: Math.min(1, data.fields.length) },
-              768: { slidesPerView: Math.min(2, data.fields.length) },
-              1024: { slidesPerView: Math.min(3, data.fields.length) },
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
             }}
           >
             {data.fields.map((f: Field) => (
-              <SwiperSlide key={f.id} className="!w-auto !h-auto">
-                <div className="bg-primary-50 rounded-lg w-[380px] p-6 shadow-primary flex gap-[10px] flex-col h-full ">
+              <SwiperSlide key={f.id} className=" lg:!w-auto !h-auto">
+                <div className="bg-primary-50 rounded-lg w-full lg:w-[380px] p-6 shadow-primary flex gap-[10px] flex-col h-full ">
                   {" "}
                   <div className="flex  items-center gap-2 pb-[11px] border-b border-b-shark-200 ">
                     <div className="h-[35px] w-[35px] bg-primary  rounded-lg flex justify-center items-center">

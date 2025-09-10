@@ -23,11 +23,11 @@ export default function PresidentsMessage({
       className={cn(
         " pb-8 px-5 border-b-[10px] border-primary-700 ",
         borderBottom
-          ? "border-b-[10px] pt-50 bg-neutral-200"
+          ? "border-b-[10px] pt-8 lg:pt-50 bg-neutral-200"
           : "border-b-0 pt-8 bg-white"
       )}
     >
-      <div className="max-w-[1233px] mx-auto flex gap-6">
+      <div className="max-w-[1233px] mx-auto flex  flex-col lg:flex-row gap-6 items-center lg:items-start">
         <div className="flex flex-col gap-3">
           <div className="bg-primary py-2 px-6 font-semibold rounded-lg w-fit flex gap-[10px]">
             <Image
@@ -46,7 +46,7 @@ export default function PresidentsMessage({
           </div>
 
           <div className="gap-1 flex flex-col ">
-            <div className="text-5xl leading-[60px] font-bold gap-2 flex">
+            <div className=" text-3xl md:text-4xl lg:text-5xl leading-[60px] font-bold gap-2 flex">
               {names.map((n: string, index: number) => (
                 <span
                   key={index}

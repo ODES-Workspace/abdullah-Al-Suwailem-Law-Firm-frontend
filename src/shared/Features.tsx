@@ -21,8 +21,8 @@ export default function Features() {
   }
 
   return (
-    <div className="py-23 px-5 bg-neutral-200">
-      <div className="max-w-[1073px] mx-auto w-full flex gap-2 items-center justify-between">
+    <div className="py-10 lg:py-23 px-5 bg-neutral-200">
+      <div className="max-w-[1073px] mx-auto w-full flex-col sm:flex-row flex gap-10 lg:gap-2 items-center justify-around lg:justify-between">
         {data?.map((f: Feature, index: number) => {
           return (
             <div

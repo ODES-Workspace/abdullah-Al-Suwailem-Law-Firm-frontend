@@ -48,9 +48,9 @@ export default function Footer() {
   };
 
   return (
-    <div className="py-10 bg-primary-950">
+    <div className="py-10 px-5 bg-primary-950">
       <div className="max-w-[1240px] mx-auto">
-        <div className="grid grid-cols-[1fr_2fr_1fr] text-white gap-6 mb-10">
+        <div className="grid  md:grid-cols-2 lg:grid-cols-[1fr_2fr_1fr] text-white gap-6 mb-10">
           <div className="flex flex-col gap-4">
             <div className="font-bold border-b border-white/30 pb-2">
               {content.sections}
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-[64px] justify-center items-center mb-4 text-white text-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:gap-[64px] justify-center items-center mb-4 text-white text-sm">
           <div>{content.city}</div>
           <div>{content.district}</div>
           <div>{content.street}</div>

@@ -10,34 +10,36 @@ export default function HomeHero() {
   const isArabic = lang === "ar";
 
   return (
-    <div className="h-[985px] relative  bg-no-repeat bg-center bg-cover bg-[linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('/fahad.jpg')]">
-      <div className="py-50 px-5  h-full ">
-        <div className=" mx-auto  flex flex-col  h-full justify-center max-w-[1233px] w-full text-white">
-          {isLoading || !data ? (
-            <div className="flex-col justify-center items-center w-full text-center">
-              {isArabic ? "جاري التحميل..." : "Loading..."}
-            </div>
-          ) : (
-            <div className="max-w-[689px] gap-6 flex flex-col">
-              <h1
-                className={`text-6xl font-bold capitalize ${
-                  isArabic ? "leading-[101px]" : "leading-[70px]"
-                }`}
-              >
-                {data?.[lang].title}
-              </h1>
-              <p className="text-lg">{data?.[lang].subtitle}</p>
-
-              <div className="bg-primary py-2 px-4 text-white rounded-4xl cursor-pointer w-fit">
-                &quot;{data?.[lang].buttonText}&quot;
+    <div className="relative">
+      <div className=" h-[100vh] lg:h-[985px]   bg-no-repeat bg-center bg-cover bg-[linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('/fahad.jpg')]">
+        <div className="py-30 lg:py-50 px-5  h-full ">
+          <div className=" mx-auto  flex flex-col  h-full justify-center max-w-[1233px] w-full text-white">
+            {isLoading || !data ? (
+              <div className="flex-col justify-center items-center w-full text-center">
+                {isArabic ? "جاري التحميل..." : "Loading..."}
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="lg:max-w-[689px] gap-6 flex flex-col items-center lg:items-start text-center lg:text-start">
+                <h1
+                  className={`text-3xl md:text-4xl leading-[50px] lg:text-6xl font-bold capitalize ${
+                    isArabic ? "lg:leading-[101px]" : "lg:leading-[70px]"
+                  }`}
+                >
+                  {data?.[lang].title}
+                </h1>
+                <p className="text-lg">{data?.[lang].subtitle}</p>
+
+                <div className="bg-primary py-2 px-4 text-white rounded-4xl cursor-pointer w-fit">
+                  &quot;{data?.[lang].buttonText}&quot;
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <div className="absolute -bottom-[50px] right-0 left-0 ">
+      <div className=" py-5 lg:py-0 lg:absolute lg:-bottom-[50px] right-0 left-0 ">
         <Goals />
-      </div>
+      </div>{" "}
     </div>
   );
 }
