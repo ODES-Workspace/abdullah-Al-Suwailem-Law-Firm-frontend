@@ -85,50 +85,58 @@ export default function Header() {
         </div>{" "}
       </div>
       {isOpen && (
-        <div
-          className={cn(
-            lang === "ar" ? "right-0" : "left-0",
-            "xl:hidden absolute top-0 h-[100vh] p-4  w-[195px] bg-primary-50  shadow-primary "
-          )}
-        >
-          <div className="flex justify-between items-center border-b border-primary pb-2 mb-6 ">
-            <Logo className="h-[33px] w-[33px] text-primary" />
-
-            <Image
-              src="/close.svg"
-              width={20}
-              height={20}
-              alt="close"
-              onClick={() => handleOpenSidebar()}
-            />
-          </div>
-          <div className="flex flex-col gap-4 mb-6 ">
-            {links.map((link) => (
-              <Link
-                href={link.href}
-                key={link.href}
-                onClick={() => handleOpenSidebar()}
-                className={cn(
-                  route === link.href
-                    ? "text-primary font-bold  text-xl pb-2 border-b "
-                    : "text-primary-950",
-                  "w-[91px]"
-                )}
-              >
-                {link[lang]}
-              </Link>
-            ))}
-          </div>
+        <>
+          {/* Backdrop */}
           <div
-            onClick={() => {
-              handleOpenSidebar();
-              setLang(lang === "ar" ? "en" : "ar");
-            }}
-            className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer text-center"
+            className="fixed inset-0 backdrop-blur-sm bg-opacity-30 z-40 xl:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+          {/* Sidebar */}
+          <div
+            className={cn(
+              lang === "ar" ? "right-0" : "left-0",
+              "xl:hidden absolute top-0 h-[100vh] p-4  w-[195px] bg-primary-50  shadow-primary z-50"
+            )}
           >
-            {lang === "ar" ? "EN" : "AR"}
-          </div>{" "}
-        </div>
+            <div className="flex justify-between items-center border-b border-primary pb-2 mb-6 ">
+              <Logo className="h-[33px] w-[33px] text-primary" />
+
+              <Image
+                src="/close.svg"
+                width={20}
+                height={20}
+                alt="close"
+                onClick={() => handleOpenSidebar()}
+              />
+            </div>
+            <div className="flex flex-col gap-4 mb-6 ">
+              {links.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  onClick={() => handleOpenSidebar()}
+                  className={cn(
+                    route === link.href
+                      ? "text-primary font-bold  text-xl pb-2 border-b "
+                      : "text-primary-950",
+                    "w-[91px]"
+                  )}
+                >
+                  {link[lang]}
+                </Link>
+              ))}
+            </div>
+            <div
+              onClick={() => {
+                handleOpenSidebar();
+                setLang(lang === "ar" ? "en" : "ar");
+              }}
+              className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer text-center"
+            >
+              {lang === "ar" ? "EN" : "AR"}
+            </div>{" "}
+          </div>
+        </>
       )}
     </div>
   );
