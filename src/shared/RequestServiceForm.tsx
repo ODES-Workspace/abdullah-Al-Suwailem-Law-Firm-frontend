@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import FloatLabelInput from "./FloatLabelInput";
 import { useForm } from "react-hook-form";
+import { useAddPost } from "@/hooks/usePost";
 
 export default function RequestServiceForm() {
   const { lang } = useContextProvider();
@@ -22,13 +23,67 @@ export default function RequestServiceForm() {
     reset,
   } = useForm<FormValues>();
 
+  const { mutate, isPending, isSuccess, isError } = useAddPost();
+
   const onSubmit = (data: FormValues) => {
     console.log("Form Data:", data);
     reset();
+
+    const payload = {
+      post_type: "service_request",
+      slug: "service_request",
+      is_active: 1,
+      translations: [
+        {
+          locale: "ar",
+          title: data.name,
+          description: data.message,
+        },
+        {
+          locale: "en",
+          title: data.name,
+          description: data.message,
+        },
+      ],
+      post_meta: [
+        {
+          meta_key: "phone",
+
+          translations: [
+            {
+              locale: "en",
+              value: data.phone,
+            },
+            {
+              locale: "ar",
+              value: data.phone,
+            },
+          ],
+        },
+        {
+          meta_key: "email",
+          translations: [
+            {
+              locale: "en",
+              value: data.email,
+            },
+            {
+              locale: "ar",
+              value: data.email,
+            },
+          ],
+        },
+      ],
+    };
+
+    mutate(payload);
   };
 
   return (
-    <div className="py-10 lg:py-30 pb-5 px-5 bg-[linear-gradient(rgba(243,244,246,0.9),rgba(243,244,246,0.9)),url('/req-form.png')]  bg-cover bg-no-repeat bg-center">
+    <div
+      className="py-10 lg:py-30 pb-5 px-5 bg-[linear-gradient(rgba(243,244,246,0.9),rgba(243,244,246,0.9)),url('/req-form.png')]  bg-cover bg-no-repeat bg-center"
+      id="contact-us"
+    >
       <div className="max-w-[1233px] mx-auto flex flex-col gap-[54px] ">
         <div className="flex justify-center items-center gap-3 flex-col w-full text-center">
           <div className="flex gap-2" dir="rtl">
@@ -159,13 +214,30 @@ export default function RequestServiceForm() {
               )}
             </div>
           </div>
+          <div className="flex flex-col gap-2">
+            <button
+              type="submit"
+              disabled={isPending}
+              className="max-w-[285px] rounded-4xl border py-1.5 lg:py-3 cursor-pointer text-primary-900 text-lg lg:text-2xl"
+            >
+              {lang === "ar" ? "ارسال" : " Send"}
+              {isPending && (lang === "ar" ? "جاري الارسال..." : "Sending...")}
+            </button>
 
-          <button
-            type="submit"
-            className="max-w-[285px] rounded-4xl border py-1.5 lg:py-3 cursor-pointer text-primary-900 text-lg lg:text-2xl"
-          >
-            {lang === "ar" ? "ارسال" : " Send"}
-          </button>
+            {isSuccess && (
+              <div className="text-green-500 text-lg ">
+                {lang === "ar" ? "تم الارسال بنجاح" : "Sent successfully"}
+              </div>
+            )}
+
+            {isError && (
+              <div className="text-red-500 text-lg ">
+                {lang === "ar"
+                  ? "حدث خطأ ما , من فضلك حاول مرة أخرى"
+                  : "Something went wrong please try again"}
+              </div>
+            )}
+          </div>
         </form>
         <div className="flex flex-col gap-3 lg:flex-row lg:gap-[128px] justify-center items-center">
           <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
