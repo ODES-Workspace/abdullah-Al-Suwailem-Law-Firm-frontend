@@ -10,7 +10,7 @@ export default function ConsultationForm() {
   const { lang, handleModelDisplay } = useContextProvider();
 
   const serviceOptions = data?.map((service: Item) => {
-    const translation = service.translations.find(
+    const translation = service.translations?.find(
       (t: Translation) => t.locale === lang
     );
     return {

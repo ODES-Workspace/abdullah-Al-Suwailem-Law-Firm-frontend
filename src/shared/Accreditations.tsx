@@ -22,7 +22,7 @@ export default function Accreditations() {
         </div>
         <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
           {data.map((a: Item, index: number) => {
-            const translation = a?.translations.find(
+            const translation = a?.translations?.find(
               (t: Translation) => t.locale === lang
             );
             return (

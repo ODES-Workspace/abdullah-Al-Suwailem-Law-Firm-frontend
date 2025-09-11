@@ -52,7 +52,7 @@ export default function HomeServices() {
         </div>
         <div className="grid mdgrid-cols-2 lg:grid-cols-3 gap-6">
           {data.slice(0, 6).map((s: Item, index: number) => {
-            const translation = s?.translations.find(
+            const translation = s?.translations?.find(
               (t: Translation) => t.locale === lang
             );
             return (
