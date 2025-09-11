@@ -1,5 +1,6 @@
 "use client";
 
+import { useContextProvider } from "@/context/Context";
 import { cn } from "@/lib";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
@@ -30,6 +31,8 @@ export default function Select({
   const [isOpen, setIsOpen] = useState(false);
   const SELECT_REF = useRef<HTMLDivElement>(null);
   const SELECTED = options?.find((o) => o.value === value)?.label;
+
+  const { lang } = useContextProvider();
 
   const handleSelect = (value: string) => {
     onChange(value);
@@ -72,10 +75,13 @@ export default function Select({
         )}
       >
         <div className="flex items-center gap-2 w-full">
-          <div>{SELECTED || placeholder}</div>
+          <div className="line-clamp-1">{SELECTED || placeholder}</div>
 
           {!SELECTED && optional && (
-            <div className="text-gray"> ( إختياري )</div>
+            <div className="text-gray">
+              {" "}
+              ( {lang === "ar" ? "اختياري" : "Optional"} )
+            </div>
           )}
         </div>
 

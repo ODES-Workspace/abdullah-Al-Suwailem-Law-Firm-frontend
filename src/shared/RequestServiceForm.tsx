@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import FloatLabelInput from "./FloatLabelInput";
 import { useForm } from "react-hook-form";
-import { useAddPost } from "@/hooks/usePost";
+import { useAddContact } from "@/hooks/useContact";
 
 export default function RequestServiceForm() {
   const { lang } = useContextProvider();
@@ -23,15 +23,15 @@ export default function RequestServiceForm() {
     reset,
   } = useForm<FormValues>();
 
-  const { mutate, isPending, isSuccess, isError } = useAddPost();
+  const { mutate, isPending, isSuccess, isError } = useAddContact();
 
   const onSubmit = (data: FormValues) => {
     console.log("Form Data:", data);
     reset();
 
     const payload = {
-      post_type: "service_request",
-      slug: "service_request",
+      post_type: "contact_form",
+      slug: "contact_form",
       is_active: 1,
       translations: [
         {
