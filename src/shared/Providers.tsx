@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Provider } from "@/context/Context";
 import HtmlAttributes from "./HtmlAttributes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export default function Providers({ children }: ProvidersProps) {
         <HtmlAttributes />
         {children}
       </Provider>
+      <Toaster position="top-center" reverseOrder={false} />
     </QueryClientProvider>
   );
 }
