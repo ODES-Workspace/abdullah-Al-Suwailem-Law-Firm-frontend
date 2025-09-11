@@ -10,11 +10,11 @@ export default function Goals({ className }: { className?: string }) {
   const { data: vission, isLoading: vissionLoading } = useVission();
   const { lang } = useContextProvider();
 
-  const missionText = mission?.translations.find(
+  const missionText = mission?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 
-  const vissionText = vission?.translations.find(
+  const vissionText = vission?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 

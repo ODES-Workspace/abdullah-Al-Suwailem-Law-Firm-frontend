@@ -90,7 +90,7 @@ export default function Fields() {
             }}
           >
             {data.map((f: Item, index: number) => {
-              const translation = f?.translations.find(
+              const translation = f?.translations?.find(
                 (t: Translation) => t.locale === lang
               );
               return (

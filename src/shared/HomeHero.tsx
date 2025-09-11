@@ -10,7 +10,7 @@ export default function HomeHero() {
   const { lang } = useContextProvider();
   const isArabic = lang === "ar";
 
-  const translation = data?.translations.find(
+  const translation = data?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 
@@ -18,7 +18,7 @@ export default function HomeHero() {
     (t: Meta) => t.meta_key === "buttonText"
   );
 
-  const buttonText = buttonMeta?.translations.find(
+  const buttonText = buttonMeta?.translations?.find(
     (tr: Translation) => tr.locale === lang
   )?.value;
 

@@ -38,7 +38,7 @@ const links = [
   {
     ar: "الاتصال بنا",
     en: "Contact Us",
-    href: "/contact-us",
+    href: "home/#contact-us",
   },
 ];
 

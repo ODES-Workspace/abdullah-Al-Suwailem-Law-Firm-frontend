@@ -6,6 +6,6 @@ import { Meta, Translation } from "./types";
 export default function GetMetaText(key: string, data: any) {
   const { lang } = useContextProvider();
   const meta = data?.metas?.find((t: Meta) => t.meta_key === key);
-  return meta?.translations.find((tr: Translation) => tr.locale === lang)
+  return meta?.translations?.find((tr: Translation) => tr.locale === lang)
     ?.value;
 }

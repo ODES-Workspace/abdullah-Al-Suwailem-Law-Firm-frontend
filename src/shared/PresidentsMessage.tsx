@@ -16,7 +16,7 @@ export default function PresidentsMessage({
   const { data, isLoading } = usePresident();
   const { lang } = useContextProvider();
 
-  const translation = data?.translations.find(
+  const translation = data?.translations?.find(
     (t: Translation) => t.locale === lang
   );
   const names = translation?.title.split(" ");

@@ -42,7 +42,7 @@ export default function Page() {
         <div className="py-20 px-5">
           <div className="max-w-[1233px] mx-auto  grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.map((s: Item, index: number) => {
-              const translation = s?.translations.find(
+              const translation = s?.translations?.find(
                 (t: Translation) => t.locale === lang
               );
               return (
