@@ -1,10 +1,12 @@
 "use client";
 import { useLang } from "@/context/LangContext";
 import usePresident from "@/hooks/usePresident";
-import { cn } from "@/lib";
+import { cn, Translation } from "@/lib";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Loading from "./Loading";
+import GetMetaText from "@/lib/getMetaText";
 
 export default function PresidentsMessage({
   borderBottom = true,
@@ -13,10 +15,22 @@ export default function PresidentsMessage({
 }) {
   const { data, isLoading } = usePresident();
   const { lang } = useLang();
-  const names = data?.content[lang].name.split(" ");
+
+  const translation = data?.translations.find(
+    (t: Translation) => t.locale === lang
+  );
+  const names = translation?.title.split(" ");
+
+  const role = GetMetaText("role", data) || "";
+  const messagetitle = GetMetaText("message-title", data) || "";
+  const messagefirst = GetMetaText("message-first", data) || "";
+  const messagesecond = GetMetaText("message-second", data) || "";
+  const messagethird = GetMetaText("message-third", data) || "";
 
   if (isLoading) {
-    return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
+    return (
+      <Loading>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</Loading>
+    );
   }
   return (
     <div
@@ -36,7 +50,7 @@ export default function PresidentsMessage({
               height={16}
               alt="president-title-icon"
             />
-            {data.content[lang]["sub-title"]}
+            {translation?.description}
             <Image
               src="/president-title.svg"
               width={16}
@@ -57,7 +71,7 @@ export default function PresidentsMessage({
               ))}
             </div>
             <div className="text-lg font-extrabold relative w-fit">
-              <div className="relative z-1">{data.content[lang].role}</div>
+              <div className="relative z-1">{role}</div>
               <Image
                 src={"/line.svg"}
                 width={141}
@@ -71,14 +85,14 @@ export default function PresidentsMessage({
           </div>
 
           <div className="flex flex-col gap-2">
-            <div>{data.content[lang]["message-title"]}</div>
-            <div>{data.content[lang]["message-first"]}</div>
-            <div>{data.content[lang]["message-second"]}</div>
-            <div>{data.content[lang]["message-third"]}</div>
+            <div>{messagetitle}</div>
+            <div>{messagefirst}</div>
+            <div>{messagesecond}</div>
+            <div>{messagethird}</div>
           </div>
 
           <Link
-            href={data.link}
+            href={data.slug}
             className="bg-primary max-w-[230px] w-full py-3 text-center flex justify-center rounded-3xl underline text-white"
           >
             {lang === "ar" ? "اقرأ المزيد" : "Read More"}
@@ -86,10 +100,10 @@ export default function PresidentsMessage({
         </div>
 
         <Image
-          src={data.image}
+          src={"/president.svg"}
           height={521}
           width={506}
-          alt={data.content[lang]["sub-title"]}
+          alt={messagetitle}
         />
       </div>
     </div>

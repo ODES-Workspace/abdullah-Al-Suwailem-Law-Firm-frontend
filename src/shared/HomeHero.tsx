@@ -3,11 +3,24 @@ import { useLang } from "@/context/LangContext";
 import useHomeHero from "@/hooks/useHomeHero";
 import React from "react";
 import Goals from "./Goals";
+import { MetaField, PostTranslation } from "@/lib";
 
 export default function HomeHero() {
   const { data, isLoading } = useHomeHero();
   const { lang } = useLang();
   const isArabic = lang === "ar";
+
+  const translation = data?.translations.find(
+    (t: PostTranslation) => t.locale === lang
+  );
+
+  const buttonMeta = data?.metas?.find(
+    (t: MetaField) => t.meta_key === "buttonText"
+  );
+
+  const buttonText = buttonMeta?.translations.find(
+    (tr: PostTranslation) => tr.locale === lang
+  )?.value;
 
   return (
     <div className="relative">
@@ -25,12 +38,12 @@ export default function HomeHero() {
                     isArabic ? "lg:leading-[101px]" : "lg:leading-[70px]"
                   }`}
                 >
-                  {data?.[lang].title}
+                  {translation.title}
                 </h1>
-                <p className="text-lg">{data?.[lang].subtitle}</p>
+                <p className="text-lg">{translation.description}</p>
 
                 <div className="bg-primary py-2 px-4 text-white rounded-4xl cursor-pointer w-fit">
-                  &quot;{data?.[lang].buttonText}&quot;
+                  &quot;{buttonText}&quot;
                 </div>
               </div>
             )}

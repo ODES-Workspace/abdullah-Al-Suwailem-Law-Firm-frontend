@@ -30,13 +30,12 @@ export default function Footer() {
         : "Client Regulations Approval",
 
     followUs: lang === "ar" ? "تابعنا على" : "Follow Us",
-    city: lang === "ar" ? "المدينة: يكتب اسم المدينة" : "City: Write city name",
-    district:
-      lang === "ar" ? "الحي : يكتب اسم الحي" : "District: Write district name",
+    city: lang === "ar" ? "المدينة:  الرياض" : "City: Riyadh",
+    district: lang === "ar" ? "الحي :  القيروان" : "District: Al Qirawan",
     street:
       lang === "ar"
-        ? "الطريق : يكتب العنوان بالتفصيل"
-        : "Street: Write full address",
+        ? "الطريق : شارع الأمير محمد بن سعد بن عبدالعزيز •⁠  ⁠رقم المبنى : 6273"
+        : "Street: Prince Mohammed Bin Saad Bin Abdulaziz St. •⁠  ⁠Building No.: 6273",
     mapLink:
       lang === "ar"
         ? "اضفط هنا للموقع علي الخريطة"
@@ -94,7 +93,10 @@ export default function Footer() {
                   alt="instagram"
                 />
               </a>
-              <a href="#" className="p-2 bg-white/30 rounded-lg">
+              <a
+                href="https://www.linkedin.com/company/fs-law-firm/"
+                className="p-2 bg-white/30 rounded-lg"
+              >
                 <Image
                   src="/linkedin-white.svg"
                   width={20}
@@ -102,18 +104,35 @@ export default function Footer() {
                   alt="linkedin"
                 />
               </a>
-              <a href="#" className="p-2 bg-white/30 rounded-lg">
+              <a
+                href="https://x.com/fs_lawfirm?s=21&t=1syTIcLG2quZ6-U48-H6zw"
+                className="p-2 bg-white/30 rounded-lg"
+              >
                 <Image src="/x-white.svg" width={20} height={20} alt="x" />
+              </a>
+              <a
+                href="https://wa.me/966536571719"
+                className="p-2 bg-white/30 rounded-lg"
+              >
+                <Image
+                  src="/whatsapp-white.svg"
+                  width={20}
+                  height={20}
+                  alt="x"
+                />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 lg:flex-row lg:gap-[64px] justify-center items-center mb-4 text-white text-sm">
+        <div className="flex text-center lg:text-start flex-col gap-4 lg:flex-row lg:gap-[64px] justify-center items-center mb-4 text-white text-sm">
           <div>{content.city}</div>
           <div>{content.district}</div>
           <div>{content.street}</div>
-          <a href="#" className="underline flex gap-1 items-center">
+          <a
+            href="bing.com/maps?where=الرياض+-+حي+القيروان+-+طريق+الملك+سلمان+بن+عبد+العزيز+-+خلف+الهيئة+العامة+للولاية+على+أموال+القاصرين%2C+مكتب+رقم+5%2C+Riyadh+%2C+SA&cp=29.845409~31.460037&lvl=11.0"
+            className="underline flex gap-1 items-center"
+          >
             <Image src="/map-marker.svg" width={24} height={24} alt="map" />
             {content.mapLink}
           </a>

@@ -6,4 +6,5 @@ export { default as getFields } from "./getFields";
 export { default as getAccreditations } from "./getAccreditations";
 export { default as getPartners } from "./getPartners";
 export { default as getAbout } from "./getAbout";
-export { default as getGoals } from "./getGoals";
+export { default as getMission } from "./getMission";
+export { default as getVission } from "./getVission";

@@ -168,15 +168,21 @@ export default function RequestServiceForm() {
           </button>
         </form>
         <div className="flex flex-col gap-3 lg:flex-row lg:gap-[128px] justify-center items-center">
-          <div className="flex gap-3 items-center text-sm">
+          <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
             {lang === "ar" ? (
-              <div>12 شارع شهاب بن عبد الله,بريدة</div>
+              <div className="max-w-[300px] leading-wide">
+                الرياض _ القيروان _ شارع الأمير محمد بن سعد بن عبدالعزيز •⁠ ⁠رقم
+                المبنى : 6273
+              </div>
             ) : (
-              <div>12 Street Shohab Ibn Abdullah, Bireed</div>
+              <div className="max-w-[300px] leading-wide">
+                Riyadh _ Al-Qirawan _ Prince Mohammed bin Saad bin Abdulaziz
+                Street • Building No: 6273
+              </div>
             )}
             <Image width={30} height={30} src="/location.svg" alt="map-icon" />
           </div>
-          <div className="flex gap-3 items-center text-sm">
+          <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
             <a href="mailto:help@company.sa">help@company.sa</a>
             <Image
               width={30}
@@ -185,10 +191,15 @@ export default function RequestServiceForm() {
               alt="message-icon"
             />
           </div>
-          <div className="flex gap-3 items-center text-sm">
-            <a href="tel:+966 50 123 4567" dir="ltr">
-              +966 50 123 4567
-            </a>
+          <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
+            <div className="flex flex-col gap-1">
+              <a href="tel:0500503828 " dir="ltr">
+                0500503828
+              </a>
+              <a href="tel:0500503828 " dir="ltr">
+                0557316611
+              </a>
+            </div>
             <Image width={30} height={30} src="/phone.svg" alt="phone-icon" />
           </div>
         </div>
@@ -197,10 +208,10 @@ export default function RequestServiceForm() {
           <a href="">
             <Image src="/instagram.svg" width={20} height={20} alt="socials" />
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/company/fs-law-firm/">
             <Image src="/linkedIn.svg" width={20} height={20} alt="socials" />
           </a>
-          <a href="">
+          <a href="https://x.com/fs_lawfirm?s=21&t=1syTIcLG2quZ6-U48-H6zw">
             <Image src="/x.svg" width={20} height={20} alt="socials" />
           </a>
         </div>

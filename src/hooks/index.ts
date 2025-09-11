@@ -6,4 +6,3 @@ export { default as useHomeServices } from "./useHomeServices";
 export { default as useFields } from "./useFields";
 export { default as useAccreditations } from "./useAccreditations";
 export { default as usePartners } from "./usePartners";
-export { default as useGoals } from "./useGoals";

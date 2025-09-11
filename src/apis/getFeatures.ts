@@ -2,7 +2,7 @@ import { axiosInstance } from "@/lib";
 
 async function getFeatures() {
   try {
-    const res = await axiosInstance.get("/features.json");
+    const res = await axiosInstance.get("/posts?type=features");
     return res.data;
   } catch (err) {
     console.log(err);

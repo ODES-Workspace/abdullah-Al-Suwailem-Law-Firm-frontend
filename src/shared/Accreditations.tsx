@@ -3,39 +3,34 @@ import { useLang } from "@/context/LangContext";
 import useAccreditations from "@/hooks/useAccreditations";
 import Image from "next/image";
 import React from "react";
+import Loading from "./Loading";
+import { Item, Translation } from "@/lib";
 
-type Accreditation = {
-  id: number;
-  image: string;
-  title: {
-    en: string;
-    ar: string;
-  };
-  description: {
-    en: string;
-    ar: string;
-  };
-};
 export default function Accreditations() {
   const { isLoading, data } = useAccreditations();
   const { lang } = useLang();
   if (isLoading) {
-    return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
+    return (
+      <Loading>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</Loading>
+    );
   }
   return (
     <div className="py-10 lg:py-[90px] px-5 bg-neutral-200">
       <div className="max-w-[1233px] mx-auto w-full gap-12 flex flex-col">
         <div className="text-3xl lg:text-5xl text-center font-bold text-primary-950">
-          {data.title[lang]}
+          {lang === "ar" ? "الإعتمادات" : "Accreditations"}
         </div>
         <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-          {data.accreditations.map((a: Accreditation) => {
+          {data.map((a: Item, index: number) => {
+            const translation = a?.translations.find(
+              (t: Translation) => t.locale === lang
+            );
             return (
               <div key={a.id} className="flex flex-col ">
                 <div className="relative h-[50px] mb-6">
                   <Image
-                    src={a.image}
-                    alt={a.title[lang]}
+                    src={`/accreditation${index + 1}.svg`}
+                    alt={translation?.title || ""}
                     fill
                     className="!w-fit h-full "
                   />
@@ -49,8 +44,8 @@ export default function Accreditations() {
                 />
 
                 <div className="flex gap-1 flex-col">
-                  <div className="font-bold">{a.title[lang]}</div>
-                  <div className="text-sm">{a.description[lang]}</div>
+                  <div className="font-bold">{translation?.title}</div>
+                  <div className="text-sm">{translation?.description}</div>
                 </div>
               </div>
             );

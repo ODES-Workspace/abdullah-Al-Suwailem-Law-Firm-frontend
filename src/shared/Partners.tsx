@@ -1,28 +1,29 @@
 "use client";
 import { useLang } from "@/context/LangContext";
-import usePartners from "@/hooks/usePartners";
 import Image from "next/image";
 import React from "react";
 
-type Partner = {
-  id: number;
-  icon: string;
+const DATA = {
+  title: { en: "Our Partners", ar: "شركاؤنا" },
+  partners: [
+    { id: 1, icon: "/partner1.svg" },
+    { id: 2, icon: "/partner2.svg" },
+    { id: 3, icon: "/partner3.svg" },
+    { id: 4, icon: "/partner4.svg" },
+    { id: 5, icon: "/partner5.svg" },
+  ],
 };
-
 export default function Partners() {
-  const { data, isLoading } = usePartners();
   const { lang } = useLang();
-  if (isLoading) {
-    return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
-  }
+
   return (
     <div className="py-10 lg:py-[90px] px-5 ">
       <div className="max-w-[1233px] mx-auto w-full gap-12 flex flex-col">
         <div className="text-3xl lg:text-5xl text-center font-bold text-primary-950 pb-[20px] border-b-2 border-primary-300 w-fit mx-auto">
-          {data.title[lang]}
+          {DATA.title[lang]}
         </div>
         <div className="flex flex-col md:flex-row justify-between gap-2 items-center ">
-          {data.partners.map((p: Partner) => {
+          {DATA.partners.map((p) => {
             return (
               <div
                 key={p.id}

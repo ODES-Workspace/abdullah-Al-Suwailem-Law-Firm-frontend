@@ -1,15 +1,25 @@
 import { useLang } from "@/context/LangContext";
-import useGoals from "@/hooks/useGoals";
+import useMission from "@/hooks/useMission";
+import useVission from "@/hooks/useVission";
+import { Translation } from "@/lib";
 import Image from "next/image";
 import React from "react";
 
 export default function Goals({ className }: { className?: string }) {
-  const { data, isLoading } = useGoals();
+  const { data: mission, isLoading: missionLoading } = useMission();
+  const { data: vission, isLoading: vissionLoading } = useVission();
   const { lang } = useLang();
-  const isArabic = lang === "ar";
 
-  if (isLoading) {
-    return <div> {isArabic ? "جاري التحميل..." : "Loading..."}</div>;
+  const missionText = mission?.translations.find(
+    (t: Translation) => t.locale === lang
+  );
+
+  const vissionText = vission?.translations.find(
+    (t: Translation) => t.locale === lang
+  );
+
+  if (missionLoading || vissionLoading) {
+    return null;
   }
 
   return (
@@ -20,15 +30,15 @@ export default function Goals({ className }: { className?: string }) {
         >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
-              src={data.vission.icon}
-              alt={data?.vission?.[lang]?.title || ""}
+              src="/vission.svg"
+              alt={vissionText?.title || ""}
               width={57}
               height={57}
             />
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="text-4xl font-bold">{data?.vission[lang].title}</h2>
-            <p className="text-sm">{data?.vission[lang].description}</p>
+            <h2 className="text-4xl font-bold">{vissionText?.title}</h2>
+            <p className="text-sm">{vissionText?.description}</p>
           </div>
         </div>
         <div
@@ -36,15 +46,15 @@ export default function Goals({ className }: { className?: string }) {
         >
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
-              src={data.mission.icon}
-              alt={data?.mission?.[lang]?.title || ""}
+              src="/mission.svg"
+              alt={vissionText.title || ""}
               width={57}
               height={57}
             />
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="text-4xl font-bold">{data?.mission[lang].title}</h2>
-            <p className="text-sm">{data?.mission[lang].description}</p>
+            <h2 className="text-4xl font-bold">{missionText?.title}</h2>
+            <p className="text-sm">{missionText?.description}</p>
           </div>
         </div>
       </div>{" "}

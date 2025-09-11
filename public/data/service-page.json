@@ -11,170 +11,135 @@
     {
       "id": 1,
       "icon": "/service1.svg",
-      "title": {
-        "en": "Legal Consultation",
-        "ar": "الاستشارات القانونية"
-      },
-      "description": {
-        "en": "At Fahad Al Suwailem, we offer specialized legal consultations covering all areas to help individuals and businesses make informed decisions and avoid legal risks, providing precise solutions in accordance with the latest laws and regulations.",
-        "ar": "نقدم في شركة فهد السويلم استشارات قانونية متخصصة تغطي جميع المجالات، لمساعدة الأفراد والشركات على اتخاذ القرارات الصحيحة وتجنب المخاطر القانونية، مع توفير حلول دقيقة وفق أحدث القوانين والأنظمة."
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Legal Consultation",
+          "description": "At Fahad Al Suwailem, we offer specialized legal consultations covering all areas to help individuals and businesses make informed decisions and avoid legal risks, providing precise solutions in accordance with the latest laws and regulations."
+        },
+        {
+          "locale": "ar",
+          "title": "الاستشارات القانونية",
+          "description": "نقدم في شركة فهد السويلم استشارات قانونية متخصصة تغطي جميع المجالات، لمساعدة الأفراد والشركات على اتخاذ القرارات الصحيحة وتجنب المخاطر القانونية، مع توفير حلول دقيقة وفق أحدث القوانين والأنظمة."
+        }
+      ]
     },
-    {
-      "id": 2,
-      "icon": "/service2.svg",
-      "title": {
-        "en": "Bankruptcy Applications",
-        "ar": "طلبات الإفلاس"
-      },
-      "description": {
-        "en": "We assist companies and individuals in dealing with bankruptcy cases, including preparing legal applications, managing procedures, and negotiating with creditors to protect rights and achieve the best possible outcomes.",
-        "ar": "نساعد الشركات والأفراد على التعامل مع حالات الإفلاس بما يشمل إعداد الطلبات القانونية، إدارة الإجراءات، والتفاوض مع الدائنين لضمان حماية الحقوق وتحقيق أفضل النتائج الممكنة."
-      }
-    },
+
     {
       "id": 3,
       "icon": "/service3.svg",
-      "title": {
-        "en": "Debt Collection",
-        "ar": "تحصيل الديون"
-      },
-      "description": {
-        "en": "Our firm provides lawful and systematic debt collection services, following up with the necessary legal procedures to ensure clients recover their financial rights quickly and effectively.",
-        "ar": "توفر شركتنا خدمات تحصيل الديون بشكل قانوني ومنهجي، مع متابعة الإجراءات القانونية لضمان استرداد الحقوق المالية للعملاء بسرعة وفعالية"
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Debt Collection",
+          "description": "Our firm provides lawful and systematic debt collection services, following up with the necessary legal procedures to ensure clients recover their financial rights quickly and effectively."
+        },
+        {
+          "locale": "ar",
+          "title": "تحصيل الديون",
+          "description": "توفر شركتنا خدمات تحصيل الديون بشكل قانوني ومنهجي، مع متابعة الإجراءات القانونية لضمان استرداد الحقوق المالية للعملاء بسرعة وفعالية"
+        }
+      ]
     },
-    {
-      "id": 4,
-      "icon": "/service4.svg",
-      "title": {
-        "en": "Inheritance & Estates",
-        "ar": "التركات"
-      },
-      "description": {
-        "en": "We manage all procedures related to inheritance and estates, including preparing legal documents and resolving disputes, to ensure fair and lawful distribution of rights.",
-        "ar": "ندير جميع الإجراءات المتعلقة بالتركات والميراث، بما يشمل إعداد الوثائق القانونية وحل النزاعات، لضمان توزيع الحقوق بطريقة عادلة وقانونية."
-      }
-    },
+
     {
       "id": 5,
       "icon": "/service5.svg",
-      "title": {
-        "en": "Corporate Governance",
-        "ar": "حوكمة الشركات"
-      },
-      "description": {
-        "en": "We provide corporate governance solutions by developing internal policies and procedures that ensure legal compliance while enhancing transparency and accountability within institutions.",
-        "ar": "نقدم حلول حوكمة الشركات لتطوير السياسات والإجراءات الداخلية، بما يضمن الامتثال للقوانين وتعزيز الشفافية والمسؤولية داخل المؤسسات."
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Corporate Governance",
+          "description": "We provide corporate governance solutions by developing internal policies and procedures that ensure legal compliance while enhancing transparency and accountability within institutions."
+        },
+        {
+          "locale": "ar",
+          "title": "حوكمة الشركات",
+          "description": "نقدم حلول حوكمة الشركات لتطوير السياسات والإجراءات الداخلية، بما يضمن الامتثال للقوانين وتعزيز الشفافية والمسؤولية داخل المؤسسات."
+        }
+      ]
     },
-    {
-      "id": 6,
-      "icon": "/service6.svg",
-      "title": {
-        "en": "Litigation",
-        "ar": "التقاضي"
-      },
-      "description": {
-        "en": "We support our clients through all stages of litigation before courts, whether commercial, civil, or criminal cases, with a focus on protecting client rights and achieving the best legal outcomes.",
-        "ar": "نحن ندعم عملاءنا في جميع مراحل التقاضي أمام المحاكم، سواء كانت قضايا تجارية، مدنية، أو جنائية، مع التركيز على حماية حقوق العملاء وتحقيق أفضل النتائج القانونية."
-      }
-    },
+
     {
       "id": 7,
       "icon": "/service7.svg",
-      "title": {
-        "en": "Contract Drafting",
-        "ar": "صياغة العقود"
-      },
-      "description": {
-        "en": "We draft comprehensive legal contracts tailored to the needs of individuals and companies, focusing on protecting rights and minimizing legal risks in all transactions.",
-        "ar": "نقوم بصياغة عقود قانونية متكاملة تلبي احتياجات الأفراد والشركات، مع التركيز على حماية الحقوق وتقليل المخاطر القانونية في جميع التعاملات."
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Contract Drafting",
+          "description": "We draft comprehensive legal contracts tailored to the needs of individuals and companies, focusing on protecting rights and minimizing legal risks in all transactions."
+        },
+        {
+          "locale": "ar",
+          "title": "صياغة العقود",
+          "description": "نقوم بصياغة عقود قانونية متكاملة تلبي احتياجات الأفراد والشركات، مع التركيز على حماية الحقوق وتقليل المخاطر القانونية في جميع التعاملات."
+        }
+      ]
     },
-    {
-      "id": 8,
-      "icon": "/service8.svg",
-      "title": {
-        "en": "Trademark Registration",
-        "ar": "تسجيل العلامات التجارية"
-      },
-      "description": {
-        "en": "We assist in registering and protecting trademarks to ensure intellectual property rights, following all required legal procedures locally and internationally.",
-        "ar": "نساعد في تسجيل وحماية العلامات التجارية لضمان حقوق الملكية الفكرية، مع متابعة جميع الإجراءات القانونية المطلوبة لحماية العلامة على المستويين المحلي والدولي."
-      }
-    },
+
     {
       "id": 9,
       "icon": "/service9.svg",
-      "title": {
-        "en": "Employment Regulations",
-        "ar": "لوائح تنظيم العمل"
-      },
-      "description": {
-        "en": "We provide consultations and prepare internal employment regulations to ensure compliance with labor laws, protecting the rights of both employers and employees.",
-        "ar": "نوفر استشارات وإعداد لوائح تنظيم العمل داخل المؤسسات لضمان الامتثال للقوانين العمالية، وحماية حقوق الموظفين وأصحاب العمل على حد سواء."
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Employment Regulations",
+          "description": "We provide consultations and prepare internal employment regulations to ensure compliance with labor laws, protecting the rights of both employers and employees."
+        },
+        {
+          "locale": "ar",
+          "title": "لوائح تنظيم العمل",
+          "description": "نوفر استشارات وإعداد لوائح تنظيم العمل داخل المؤسسات لضمان الامتثال للقوانين العمالية، وحماية حقوق الموظفين وأصحاب العمل على حد سواء."
+        }
+      ]
     },
-    {
-      "id": 10,
-      "icon": "/service10.svg",
-      "title": {
-        "en": "Legal Mediation",
-        "ar": "الوساطة القانونية"
-      },
-      "description": {
-        "en": "We offer legal mediation services to resolve disputes outside the courts, focusing on reaching fair and satisfactory solutions for all parties efficiently.",
-        "ar": "نقدم خدمات الوساطة القانونية لتسوية النزاعات خارج نطاق المحاكم، مع التركيز على الوصول إلى حلول عادلة ومرضية لجميع الأطراف بسرعة وكفاءة."
-      }
-    },
-    {
-      "id": 11,
-      "icon": "/service11.svg",
-      "title": {
-        "en": "Company Formation",
-        "ar": "تأسيس الشركات"
-      },
-      "description": {
-        "en": "We provide comprehensive services for company formation of all types, from choosing the appropriate legal structure to registration and preparation of all required legal documents.",
-        "ar": "نقدم خدمات متكاملة لتأسيس الشركات بمختلف أنواعها، من اختيار الشكل القانوني المناسب إلى تسجيل الشركة وإعداد جميع المستندات القانونية اللازمة."
-      }
-    },
+
     {
       "id": 12,
       "icon": "/service12.svg",
-      "title": {
-        "en": "Legal Translation",
-        "ar": "الترجمة القانونية"
-      },
-      "description": {
-        "en": "We provide accurate legal translation of official documents and contracts, ensuring compliance with required legal and linguistic standards for both international and local transactions.",
-        "ar": "نوفر ترجمة قانونية دقيقة للوثائق والعقود الرسمية، بما يضمن مطابقتها للمعايير القانونية واللغوية المطلوبة في جميع المعاملات الدولية والمحلية"
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Legal Translation",
+          "description": "We provide accurate legal translation of official documents and contracts, ensuring compliance with required legal and linguistic standards for both international and local transactions."
+        },
+        {
+          "locale": "ar",
+          "title": "الترجمة القانونية",
+          "description": "نوفر ترجمة قانونية دقيقة للوثائق والعقود الرسمية، بما يضمن مطابقتها للمعايير القانونية واللغوية المطلوبة في جميع المعاملات الدولية والمحلية"
+        }
+      ]
     },
     {
       "id": 13,
       "icon": "/service13.svg",
-      "title": {
-        "en": "Legal Department Establishment",
-        "ar": "تأسيس الإدارات القانونية"
-      },
-      "description": {
-        "en": "We help companies establish strong internal legal departments, from defining organizational structures to setting policies and procedures for effective legal management.",
-        "ar": "نساعد الشركات على إنشاء إدارات قانونية داخلية قوية، من تحديد الهيكل التنظيمي إلى وضع السياسات والإجراءات، لضمان إدارة قانونية فعالة"
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Legal Department Establishment",
+          "description": "We help companies establish strong internal legal departments, from defining organizational structures to setting policies and procedures for effective legal management."
+        },
+        {
+          "locale": "ar",
+          "title": "تأسيس الإدارات القانونية",
+          "description": "نساعد الشركات على إنشاء إدارات قانونية داخلية قوية، من تحديد الهيكل التنظيمي إلى وضع السياسات والإجراءات، لضمان إدارة قانونية فعالة"
+        }
+      ]
     },
     {
       "id": 14,
       "icon": "/service14.svg",
-      "title": {
-        "en": "Legal Technology",
-        "ar": "التقنية القانونية"
-      },
-      "description": {
-        "en": "We provide legal technology solutions to enhance efficiency in managing legal operations, including using digital tools for drafting, reporting, and smart legal monitoring.",
-        "ar": "نوفر حلول التقنية القانونية لتعزيز الكفاءة في إدارة العمليات القانونية، بما يشمل استخدام أدوات رقمية لتسهيل الصياغة، التقارير، والمتابعة القانونية بشكل ذكي وفعال."
-      }
+      "translations": [
+        {
+          "locale": "en",
+          "title": "Legal Technology",
+          "description": "We provide legal technology solutions to enhance efficiency in managing legal operations, including using digital tools for drafting, reporting, and smart legal monitoring."
+        },
+        {
+          "locale": "ar",
+          "title": "التقنية القانونية",
+          "description": "نوفر حلول التقنية القانونية لتعزيز الكفاءة في إدارة العمليات القانونية، بما يشمل استخدام أدوات رقمية لتسهيل الصياغة، التقارير، والمتابعة القانونية بشكل ذكي وفعال."
+        }
+      ]
     }
   ]
 }

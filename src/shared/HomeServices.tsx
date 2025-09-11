@@ -1,29 +1,36 @@
 "use client";
 import { useLang } from "@/context/LangContext";
-import useHomeServices from "@/hooks/useHomeServices";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Loading from "./Loading";
+import useServices from "@/hooks/useServices";
+import { Item, Translation } from "@/lib";
 
-type Service = {
-  id: number;
-  icon: string;
-  title: {
-    en: string;
-    ar: string;
-  };
-  description: {
-    en: string;
-    ar: string;
-  };
+const text = {
+  ar: {
+    title: "خدمات شركة فهد السويلم",
+    description:
+      "نقدم مجموعة شاملة من الخدمات القانونية المتخصصة لتلبية جميع احتياجاتكم القانونية",
+    link: "عرض كل الخدمات",
+  },
+
+  en: {
+    title: "Fahad Al-Suwailem Services",
+    description:
+      "We offer a comprehensive range of specialized legal services to meet all your legal needs",
+    link: "View All Services",
+  },
 };
 
 export default function HomeServices() {
-  const { isLoading, data } = useHomeServices();
+  const { isLoading, data } = useServices();
   const { lang } = useLang();
 
   if (isLoading) {
-    return <div>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</div>;
+    return (
+      <Loading>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</Loading>
+    );
   }
   return (
     <div className="py-10 px-5">
@@ -31,20 +38,23 @@ export default function HomeServices() {
         <div className="flex flex-col lg:flex-row text-center lg:text-start justify-between gap-2 items-center">
           <div className="flex  flex-col gap-5 ">
             <h3 className=" text-3xl lg:text-5xl font-bold">
-              {data?.title[lang]}
+              {text[lang].title}
             </h3>
-            <p className="text-lg text-grey-700">{data["sub-title"][lang]}</p>
+            <p className="text-lg text-grey-700">{text[lang].description}</p>
           </div>
 
           <Link
-            href={data.link.href}
+            href="/services"
             className="text-primary-700 text-2xl font-extrabold underline"
           >
-            {data.link.text[lang]}
+            {text[lang].link}
           </Link>
         </div>
         <div className="grid mdgrid-cols-2 lg:grid-cols-3 gap-6">
-          {data.services.map((s: Service) => {
+          {data.slice(0, 6).map((s: Item, index: number) => {
+            const translation = s?.translations.find(
+              (t: Translation) => t.locale === lang
+            );
             return (
               <div
                 key={s.id}
@@ -52,10 +62,17 @@ export default function HomeServices() {
               >
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-4 ">
-                    <div className="p-1 bg-neutral-100/25 rounded-lg">
-                      <Image src={s.icon} alt="test" width={32} height={32} />
+                    <div className="p-1 bg-neutral-100/25 rounded-lg h-full">
+                      <Image
+                        src={`home-service${index + 1}.svg`}
+                        alt="test"
+                        width={32}
+                        height={32}
+                      />
                     </div>
-                    <div className="text-white text-lg">{s.title[lang]}</div>
+                    <div className="text-white text-lg">
+                      {translation?.title}
+                    </div>
                   </div>
                   <Image
                     src="/arrow.svg"
@@ -66,7 +83,7 @@ export default function HomeServices() {
                   />
                 </div>
                 <div className="flex lg:absolute shadow-primary  gap-5 flex-col rounded-xl lg:roundex-none z-5 w-full top-full left-0 rounded-br-2xl rounded-bl-2xl bg-white  py-3 px-5  lg:h-[333px]  justify-between  lg:opacity-0 lg:hidden group-hover:lg:flex  group-hover:opacity-100 transition-all duration-300">
-                  <div>{s.description[lang]}</div>
+                  <div>{translation?.description}</div>
                   <div className="border-primary-950 text-primary-950 text-sm border-2 w-full py-3 text-center rounded-lg">
                     {lang === "ar" ? "اطلب استشارة" : "Request Consultation"}
                   </div>

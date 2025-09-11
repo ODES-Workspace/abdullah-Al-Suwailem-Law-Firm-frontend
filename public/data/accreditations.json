@@ -1,56 +1,66 @@
-{
-  "title": {
-    "en": "Accreditations",
-    "ar": "الاعتمادات"
+[
+  {
+    "id": 1,
+    "image": "/accreditation1.svg",
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Accredited by the Saudi Bar Association",
+        "description": "Fahad Al Suwailem Law Firm is licensed by the General Directorate of Advocacy, Ministry of Justice, and a legal entity member of the Saudi Bar Association."
+      },
+      {
+        "locale": "ar",
+        "title": "معتمد لدى الهيئة السعودية للمحامين",
+        "description": "مكتب فهد السويلم للمحاماة والاستشارات القانونية حاصل على ترخيص الإدارة العامة للمحاماة وزارة العدل وعضوية المنشأة القانونية من الهيئة السعودية للمحامين"
+      }
+    ]
   },
-  "accreditations": [
-    {
-      "id": 1,
-      "image": "/accreditation1.svg",
-      "title": {
-        "en": "Accredited by the Saudi Bar Association",
-        "ar": "معتمد لدى الهيئة السعودية للمحامين"
+  {
+    "id": 2,
+    "image": "/accreditation2.svg",
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Accredited by the Ministry of Justice",
+        "description": "Fahad Al Suwailem Law Firm is licensed by the Saudi Ministry of Justice to practice law and provide legal consultations in accordance with the approved regulations."
       },
-      "description": {
-        "en": "Fahad Al Suwailem Law Firm is licensed by the General Directorate of Advocacy, Ministry of Justice, and a legal entity member of the Saudi Bar Association.",
-        "ar": "مكتب فهد السويلم للمحاماة والاستشارات القانونية حاصل على ترخيص الإدارة العامة للمحاماة وزارة العدل وعضوية المنشأة القانونية من الهيئة السعودية للمحامين"
+      {
+        "locale": "ar",
+        "title": "معتمد لدى وزارة العدل",
+        "description": "مكتب فهد السويلم للمحاماة والاستشارات القانونية مرخص من وزارة العدل السعودية لمزاولة مهنة المحاماة وتقديم الاستشارات القانونية وفق الأنظمة المعتمدة."
       }
-    },
-    {
-      "id": 2,
-      "image": "/accreditation2.svg",
-      "title": {
-        "en": "Accredited by the Ministry of Justice",
-        "ar": "معتمد لدى وزارة العدل"
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/accreditation3.svg",
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Accredited by the Ministry of Human Resources",
+        "description": "Fahad Al Suwailem Law Firm is accredited by the Ministry of Human Resources and Social Development to provide services and consultations in labor systems and work regulations."
       },
-      "description": {
-        "en": "Fahad Al Suwailem Law Firm is licensed by the Saudi Ministry of Justice to practice law and provide legal consultations in accordance with the approved regulations.",
-        "ar": "مكتب فهد السويلم للمحاماة والاستشارات القانونية مرخص من وزارة العدل السعودية لمزاولة مهنة المحاماة وتقديم الاستشارات القانونية وفق الأنظمة المعتمدة."
+      {
+        "locale": "ar",
+        "title": "معتمد لدى وزارة الموارد البشريــة",
+        "description": "مكتب فهد السويلم للمحاماة والاستشارات القانونية معتمد لدى وزارة الموارد البشرية والتنمية الاجتماعية لتقديم الخدمات والاستشارات في الأنظمة العمالية ولوائح تنظيم العمل."
       }
-    },
-    {
-      "id": 3,
-      "image": "/accreditation3.svg",
-      "title": {
-        "en": "Accredited by the Ministry of Human Resources",
-        "ar": "معتمد لدى وزارة الموارد البشريــة"
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/accreditation4.svg",
+    "translations": [
+      {
+        "locale": "en",
+        "title": "Accredited by the National Unified Access Platform (Nafath)",
+        "description": "Fahad Al Suwailem Law Firm is accredited by the National Unified Access Platform (Nafath) to provide electronic legal services with reliability and security."
       },
-      "description": {
-        "en": "Fahad Al Suwailem Law Firm is accredited by the Ministry of Human Resources and Social Development to provide services and consultations in labor systems and work regulations.",
-        "ar": "مكتب فهد السويلم للمحاماة والاستشارات القانونية معتمد لدى وزارة الموارد البشرية والتنمية الاجتماعية لتقديم الخدمات والاستشارات في الأنظمة العمالية ولوائح تنظيم العمل."
+      {
+        "locale": "ar",
+        "title": "معتمد لدى منصة نفاذ",
+        "description": "مكتب فهد السويلم للمحاماة والاستشارات القانونية معتمد عبر منصة نفاذ الوطني الموحد لتقديم الخدمات القانونية الإلكترونية بكل موثوقية وأمان."
       }
-    },
-    {
-      "id": 4,
-      "image": "/accreditation4.svg",
-      "title": {
-        "en": "Accredited by the National Unified Access Platform (Nafath)",
-        "ar": "معتمد لدى منصة نفاذ"
-      },
-      "description": {
-        "en": "Fahad Al Suwailem Law Firm is accredited by the National Unified Access Platform (Nafath) to provide electronic legal services with reliability and security.",
-        "ar": "مكتب فهد السويلم للمحاماة والاستشارات القانونية معتمد عبر منصة نفاذ الوطني الموحد لتقديم الخدمات القانونية الإلكترونية بكل موثوقية وأمان."
-      }
-    }
-  ]
-}
+    ]
+  }
+]
