@@ -1,8 +1,7 @@
 "use client";
-import { getMetaTranslation } from "@/app/Helpers/getMetaTranslation";
 import { getTranslation } from "@/app/Helpers/getTranslation";
-import { useHomeHero } from "@/hooks";
 import { useUpdatePost } from "@/hooks/usePost";
+import useMission from "@/hooks/useMission";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
@@ -12,12 +11,9 @@ type FormValues = {
   title_en: string;
   desc_ar: string;
   desc_en: string;
-  btn_ar: string;
-  btn_en: string;
 };
-
-export default function HeroForm() {
-  const { data } = useHomeHero();
+export default function MissionForm() {
+  const { data } = useMission();
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
@@ -30,8 +26,6 @@ export default function HeroForm() {
         title_en: getTranslation(data.translations, "en", "title"),
         desc_ar: getTranslation(data.translations, "ar", "description"),
         desc_en: getTranslation(data.translations, "en", "description"),
-        btn_ar: getMetaTranslation(data.metas, "buttonText", "ar"),
-        btn_en: getMetaTranslation(data.metas, "buttonText", "en"),
       });
     }
   }, [data, reset]);
@@ -39,8 +33,8 @@ export default function HeroForm() {
   const onSubmit = (formData: FormValues) => {
     const payload = {
       id: data?.id,
-      post_type: "hero",
-      slug: "hero-section",
+      slug: "mission",
+      post_type: "mission",
       is_active: 1,
       translations: [
         {
@@ -54,22 +48,6 @@ export default function HeroForm() {
           description: formData.desc_en,
         },
       ],
-      post_meta: [
-        {
-          meta_key: "buttonText",
-
-          translations: [
-            {
-              locale: "en",
-              value: formData.btn_en,
-            },
-            {
-              locale: "ar",
-              value: formData.btn_ar,
-            },
-          ],
-        },
-      ],
     };
 
     mutate(payload);
@@ -78,7 +56,7 @@ export default function HeroForm() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-primary mb-6">
-        تعديل محتوى القسم الرئيسي
+        تعديل محتوى الرسالة
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -98,18 +76,7 @@ export default function HeroForm() {
           name="desc_en"
           label="الوصف  (EN)"
         />
-        <FormField
-          register={register}
-          as="textarea"
-          name="btn_ar"
-          label="     نص الزر (AR)"
-        />{" "}
-        <FormField
-          register={register}
-          as="textarea"
-          name="btn_en"
-          label="     نص الزر (EN)"
-        />
+
         <div className="col-span-2 flex justify-end ">
           <button className="bg-primary text-white py-2 px-10 rounded-4xl cursor-pointer">
             {isPending ? "جاري الحفظ..." : " حفظ التغييرات "}

@@ -25,7 +25,7 @@ export type Item = {
   id?: number;
   post_type: string;
   featured_image?: string | null;
-  slug: string;
+  slug?: string;
   is_active: number;
   created_at?: string;
   updated_at?: string;

@@ -47,7 +47,7 @@ export default function Goals({ className }: { className?: string }) {
           <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
             <Image
               src="/mission.svg"
-              alt={vissionText.title || ""}
+              alt={vissionText?.title || ""}
               width={57}
               height={57}
             />
