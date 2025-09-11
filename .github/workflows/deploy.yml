@@ -1,0 +1,69 @@
+name: Deploy to Hetzner VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Production
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Next.js app
+        run: pnpm build
+
+      - name: Deploy to Hetzner VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: ".next,public,package.json,ecosystem.config.js"
+          target: "/var/www/law"
+
+      - name: SSH Restart App
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+                curl -fsSL https://get.pnpm.io/install.sh | sh -
+                export PNPM_HOME="$HOME/.local/share/pnpm"
+                export PATH="$PNPM_HOME:$PATH"
+
+                # 🔥 Install Node.js (e.g. using nvm or manually)
+                curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+                sudo apt-get install -y nodejs
+
+                # Optional: verify node and npm
+                node -v
+                npm -v
+
+                # Install pm2 globally via pnpm (not npm)
+                pnpm add -g pm2
+
+                cd /var/www/law
+
+                pnpm install --prod
+
+                pnpm exec prisma generate
+
+                pm2 restart ecosystem.config.js || pm2 start ecosystem.config.js
+
