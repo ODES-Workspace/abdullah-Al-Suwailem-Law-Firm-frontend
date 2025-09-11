@@ -1,5 +1,11 @@
 "use client";
-import { MissionForm, HeroForm, VissionForm, PresidentForm } from "@/shared";
+import {
+  MissionForm,
+  HeroForm,
+  VissionForm,
+  PresidentForm,
+  FeaturesForm,
+} from "@/shared";
 import Select from "@/shared/Select";
 import { useState } from "react";
 
@@ -8,6 +14,7 @@ const OPTIONS = [
   { label: "الرؤية", value: "vission" },
   { label: "الرسالة", value: "mission" },
   { label: "كلمة الرئيس", value: "president" },
+  { label: "المميزات", value: "features" },
 ];
 
 export default function Page() {
@@ -30,6 +37,7 @@ export default function Page() {
       {section === "vission" && <VissionForm />}
       {section === "mission" && <MissionForm />}
       {section === "president" && <PresidentForm />}
+      {section === "features" && <FeaturesForm />}
     </div>
   );
 }

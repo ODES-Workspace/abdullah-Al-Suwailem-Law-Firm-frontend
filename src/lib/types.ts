@@ -18,7 +18,7 @@ export type Translation = {
   post_id?: number;
   locale: string;
   title?: string | null;
-  description: string | null;
+  description?: string | null;
 };
 
 export type Item = {
