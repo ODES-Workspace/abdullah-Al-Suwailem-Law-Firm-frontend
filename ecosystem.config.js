@@ -8,7 +8,7 @@ module.exports = {
     exec_mode: 'fork', // or 'cluster'
     env: {
       NODE_ENV: 'production',
-      PORT: 80,
+      PORT: 3000,
       NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
       NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
       NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
