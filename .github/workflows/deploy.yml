@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Production
-    
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          password: ${{ secrets.VPS_PASSWORD }}
           source: ".next,public,package.json,ecosystem.config.js"
           target: "/var/www/law"
 
@@ -42,28 +42,25 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          password: ${{ secrets.VPS_PASSWORD }}
           script: |
-                curl -fsSL https://get.pnpm.io/install.sh | sh -
-                export PNPM_HOME="$HOME/.local/share/pnpm"
-                export PATH="$PNPM_HOME:$PATH"
+            curl -fsSL https://get.pnpm.io/install.sh | sh -
+            export PNPM_HOME="$HOME/.local/share/pnpm"
+            export PATH="$PNPM_HOME:$PATH"
 
-                # 🔥 Install Node.js (e.g. using nvm or manually)
-                curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-                sudo apt-get install -y nodejs
+            # Install Node.js 20
+            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+            sudo apt-get install -y nodejs
 
-                # Optional: verify node and npm
-                node -v
-                npm -v
+            # Verify installation
+            node -v
+            npm -v
 
-                # Install pm2 globally via pnpm (not npm)
-                pnpm add -g pm2
+            # Install pm2 globally via pnpm
+            pnpm add -g pm2
 
-                cd /var/www/law
+            cd /var/www/law
 
-                pnpm install --prod
+            pnpm install --prod
 
-                pnpm exec prisma generate
-
-                pm2 restart ecosystem.config.js || pm2 start ecosystem.config.js
-
+            pm2 restart ecosystem.config.js || pm2 start ecosystem.config.js
