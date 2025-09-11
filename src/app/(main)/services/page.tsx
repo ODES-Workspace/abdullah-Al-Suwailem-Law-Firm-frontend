@@ -19,7 +19,7 @@ const text = {
 };
 
 export default function Page() {
-  const { lang } = useContextProvider();
+  const { lang, handleModelDisplay } = useContextProvider();
   const { data, isLoading } = useServices();
 
   return (
@@ -65,7 +65,10 @@ export default function Page() {
                     {translation?.description}
                   </p>
 
-                  <button className="mt-auto bg-secondary text-lg py-2 rounded-2xl w-full cursor-pointer">
+                  <button
+                    className="mt-auto bg-secondary text-lg py-2 rounded-2xl w-full cursor-pointer"
+                    onClick={() => handleModelDisplay()}
+                  >
                     {lang === "ar" ? "اطلب استشارة" : "Request Consultation"}
                   </button>
                 </div>

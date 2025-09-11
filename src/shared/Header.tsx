@@ -26,13 +26,13 @@ const links = [
   {
     ar: "مجالاتنا",
     en: "Our Fields",
-    href: "/fields",
+    href: "home/#fields",
   },
 
   {
     ar: "الإعتمادات",
     en: "Credentials",
-    href: "/credentials",
+    href: "home/#accreditations",
   },
 
   {
@@ -68,7 +68,13 @@ export default function Header() {
 
       <div className=" gap-6 text-lg hidden xl:flex ">
         {links.map((link) => (
-          <Link href={link.href} key={link.href}>
+          <Link
+            href={link.href}
+            key={link.href}
+            className={cn(
+              route === link.href ? "text-primary font-bold   " : ""
+            )}
+          >
             {link[lang]}
           </Link>
         ))}

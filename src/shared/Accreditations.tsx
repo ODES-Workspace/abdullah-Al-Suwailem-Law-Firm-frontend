@@ -15,7 +15,7 @@ export default function Accreditations() {
     );
   }
   return (
-    <div className="py-10 lg:py-[90px] px-5 bg-neutral-200">
+    <div id="accreditations" className="py-10 lg:py-[90px] px-5 bg-neutral-200">
       <div className="max-w-[1233px] mx-auto w-full gap-12 flex flex-col">
         <div className="text-3xl lg:text-5xl text-center font-bold text-primary-950">
           {lang === "ar" ? "الإعتمادات" : "Accreditations"}

@@ -25,7 +25,7 @@ const text = {
 
 export default function HomeServices() {
   const { isLoading, data } = useServices();
-  const { lang } = useContextProvider();
+  const { lang, handleModelDisplay } = useContextProvider();
 
   if (isLoading) {
     return (
@@ -84,7 +84,10 @@ export default function HomeServices() {
                 </div>
                 <div className="flex lg:absolute shadow-primary  gap-5 flex-col rounded-xl lg:roundex-none z-5 w-full top-full left-0 rounded-br-2xl rounded-bl-2xl bg-white  py-3 px-5  lg:h-[333px]  justify-between  lg:opacity-0 lg:hidden group-hover:lg:flex  group-hover:opacity-100 transition-all duration-300">
                   <div>{translation?.description}</div>
-                  <div className="border-primary-950 text-primary-950 text-sm border-2 w-full py-3 text-center rounded-lg">
+                  <div
+                    className="border-primary-950 text-primary-950 text-sm border-2 w-full py-3 text-center rounded-lg"
+                    onClick={() => handleModelDisplay()}
+                  >
                     {lang === "ar" ? "اطلب استشارة" : "Request Consultation"}
                   </div>
                 </div>

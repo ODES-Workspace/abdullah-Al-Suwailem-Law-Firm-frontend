@@ -17,7 +17,8 @@
   --color-primary-400: #76a4ae;
 }
 
-body {
+* {
+  scroll-behavior: smooth;
 }
 
 html[lang="en"] img[alt="field-arrow-icon"] {

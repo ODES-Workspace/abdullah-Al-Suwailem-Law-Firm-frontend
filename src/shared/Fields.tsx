@@ -39,6 +39,7 @@ export default function Fields() {
 
   return (
     <div
+      id="fields"
       className="py-10 px-5 bg-[linear-gradient(rgba(84,99,104,0.8),rgba(84,99,104,0.8)),url('/fields.png')]
  bg-no-repeat bg-cover bg-center"
     >
