@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import Link from "next/link";
 import useFields from "@/hooks/useFields";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Loading from "./Loading";
 import { Item, Translation } from "@/lib";
 
@@ -29,9 +29,7 @@ const text = {
 
 export default function Fields() {
   const { data, isLoading } = useFields();
-  const { lang } = useLang();
-
-  console.log(data);
+  const { lang } = useContextProvider();
 
   if (isLoading) {
     return (

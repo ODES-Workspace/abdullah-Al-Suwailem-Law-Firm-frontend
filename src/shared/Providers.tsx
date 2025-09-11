@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { LangProvider } from "@/context/LangContext";
+import { Provider } from "@/context/Context";
 import HtmlAttributes from "./HtmlAttributes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -13,10 +13,10 @@ export default function Providers({ children }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LangProvider>
+      <Provider>
         <HtmlAttributes />
         {children}
-      </LangProvider>
+      </Provider>
     </QueryClientProvider>
   );
 }

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib";
@@ -43,7 +43,7 @@ const links = [
 ];
 
 export default function Header() {
-  const { lang, setLang } = useLang();
+  const { lang, setLang, handleModelDisplay } = useContextProvider();
   const route = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -74,9 +74,12 @@ export default function Header() {
         ))}
       </div>
       <div className="gap-4 items-center text-sm hidden xl:flex">
-        <Link href="/" className="bg-primary py-2 px-10 text-white rounded-4xl">
+        <div
+          onClick={() => handleModelDisplay()}
+          className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer"
+        >
           {lang === "ar" ? "احصل على استشارة" : " Get a Consultation"}
-        </Link>
+        </div>
         <div
           onClick={() => setLang(lang === "ar" ? "en" : "ar")}
           className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer"

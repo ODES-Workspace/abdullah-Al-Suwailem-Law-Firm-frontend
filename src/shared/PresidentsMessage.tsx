@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import usePresident from "@/hooks/usePresident";
 import { cn, Translation } from "@/lib";
 import Image from "next/image";
@@ -14,7 +14,7 @@ export default function PresidentsMessage({
   borderBottom?: boolean;
 }) {
   const { data, isLoading } = usePresident();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   const translation = data?.translations.find(
     (t: Translation) => t.locale === lang

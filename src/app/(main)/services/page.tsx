@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import useServices from "@/hooks/useServices";
 import { Item, Translation } from "@/lib";
 import { Loading } from "@/shared";
@@ -19,7 +19,7 @@ const text = {
 };
 
 export default function Page() {
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
   const { data, isLoading } = useServices();
 
   return (

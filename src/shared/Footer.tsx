@@ -1,10 +1,10 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Image from "next/image";
 import React from "react";
 
 export default function Footer() {
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   const content = {
     sections: lang === "ar" ? "الاقسام" : "Sections",

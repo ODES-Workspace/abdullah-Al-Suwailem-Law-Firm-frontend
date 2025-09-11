@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import useAccreditations from "@/hooks/useAccreditations";
 import Image from "next/image";
 import React from "react";
@@ -8,7 +8,7 @@ import { Item, Translation } from "@/lib";
 
 export default function Accreditations() {
   const { isLoading, data } = useAccreditations();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
   if (isLoading) {
     return (
       <Loading>{lang === "ar" ? "جاري التحميل..." : "Loading..."}</Loading>

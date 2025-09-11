@@ -1,4 +1,4 @@
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import useMission from "@/hooks/useMission";
 import useVission from "@/hooks/useVission";
 import { Translation } from "@/lib";
@@ -8,7 +8,7 @@ import React from "react";
 export default function Goals({ className }: { className?: string }) {
   const { data: mission, isLoading: missionLoading } = useMission();
   const { data: vission, isLoading: vissionLoading } = useVission();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   const missionText = mission?.translations.find(
     (t: Translation) => t.locale === lang

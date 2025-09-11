@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import useFeatures from "@/hooks/useFeatures";
 import { Item, Translation } from "@/lib";
 
@@ -9,7 +9,7 @@ import Loading from "./Loading";
 
 export default function Features() {
   const { data, isLoading } = useFeatures();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   if (isLoading) {
     return (

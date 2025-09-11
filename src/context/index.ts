@@ -1,1 +1,1 @@
-export { LangProvider } from "./LangContext";
+export { Provider } from "./Context";

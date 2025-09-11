@@ -1,9 +1,9 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import { useEffect } from "react";
 
 export default function HtmlAttributes() {
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   useEffect(() => {
     // Set the lang attribute on the html element

@@ -1,12 +1,12 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Image from "next/image";
 import React from "react";
 import FloatLabelInput from "./FloatLabelInput";
 import { useForm } from "react-hook-form";
 
 export default function RequestServiceForm() {
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   type FormValues = {
     name: string;

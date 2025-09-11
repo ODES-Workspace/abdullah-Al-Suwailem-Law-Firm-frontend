@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -25,7 +25,7 @@ const text = {
 
 export default function HomeServices() {
   const { isLoading, data } = useServices();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   if (isLoading) {
     return (

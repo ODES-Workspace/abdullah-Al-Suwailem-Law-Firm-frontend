@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import Image from "next/image";
 import React from "react";
 
@@ -14,7 +14,7 @@ const DATA = {
   ],
 };
 export default function Partners() {
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
 
   return (
     <div className="py-10 lg:py-[90px] px-5 ">

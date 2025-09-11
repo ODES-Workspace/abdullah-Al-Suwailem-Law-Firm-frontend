@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/context/LangContext";
+import { useContextProvider } from "@/context/Context";
 import useHomeHero from "@/hooks/useHomeHero";
 import React from "react";
 import Goals from "./Goals";
@@ -7,7 +7,7 @@ import { Meta, Translation } from "@/lib";
 
 export default function HomeHero() {
   const { data, isLoading } = useHomeHero();
-  const { lang } = useLang();
+  const { lang } = useContextProvider();
   const isArabic = lang === "ar";
 
   const translation = data?.translations.find(
