@@ -98,7 +98,7 @@ export default function Header() {
           <div
             className={cn(
               lang === "ar" ? "right-0" : "left-0",
-              "xl:hidden absolute top-0 h-[100vh] p-4  w-[195px] bg-primary-50  shadow-primary z-50"
+              "xl:hidden absolute top-0 h-[100vh] p-4  w-[250px] bg-primary-50  shadow-primary z-50"
             )}
           >
             <div className="flex justify-between items-center border-b border-primary pb-2 mb-6 ">
@@ -134,10 +134,16 @@ export default function Header() {
                 handleOpenSidebar();
                 setLang(lang === "ar" ? "en" : "ar");
               }}
-              className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer text-center"
+              className="bg-primary py-2 px-10 mb-4 text-white rounded-4xl cursor-pointer text-center"
             >
               {lang === "ar" ? "EN" : "AR"}
             </div>{" "}
+            <div
+              onClick={() => handleModelDisplay()}
+              className="bg-primary py-2 px-10 text-white rounded-4xl cursor-pointer"
+            >
+              {lang === "ar" ? "احصل على استشارة" : " Get a Consultation"}
+            </div>
           </div>
         </>
       )}

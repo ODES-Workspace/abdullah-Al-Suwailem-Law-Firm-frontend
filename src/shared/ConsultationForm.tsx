@@ -20,13 +20,13 @@ export default function ConsultationForm() {
   });
 
   return (
-    <form className="py-8 px-12 max-w-[870px] w-full  bg-white rounded-2xl flex flex-col gap-6">
-      <h2 className="text-4xl  mb-4 text-center text-primary font-bold ">
+    <form className=" p-5 lg:py-8 lg:px-12 max-w-[870px] w-full bg-white rounded-2xl flex flex-col gap-6   ">
+      <h2 className=" text-2xl lg:text-4xl  mb-4 text-center text-primary font-bold ">
         اطلب استشارتك الآن
       </h2>
 
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-6  h-[400px] lg:h-auto overflow-y-scroll lg:overflow-y-auto">
+        <div className="flex  flex-col gap-2">
           <label htmlFor="">الإسم *</label>
           <Input />
         </div>
@@ -52,18 +52,18 @@ export default function ConsultationForm() {
           <label>رسالة (اختياري)</label>
           <textarea className="border border-primary rounded-2xl h-[166px] w-full" />
         </div>
-        <div className="col-span-2 flex justify-center ">
-          <button
-            className="bg-primary py-3 text-white max-w-[300px] w-full rounded-2xl cursor-pointer"
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              handleModelDisplay();
-            }}
-          >
-            حدد الموعد
-          </button>
-        </div>
+      </div>
+      <div className="col-span-2 flex justify-center ">
+        <button
+          className="bg-primary py-3 text-white max-w-[300px] w-full rounded-2xl cursor-pointer"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            handleModelDisplay();
+          }}
+        >
+          حدد الموعد
+        </button>
       </div>
     </form>
   );
