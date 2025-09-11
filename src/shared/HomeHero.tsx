@@ -3,7 +3,7 @@ import { useLang } from "@/context/LangContext";
 import useHomeHero from "@/hooks/useHomeHero";
 import React from "react";
 import Goals from "./Goals";
-import { MetaField, PostTranslation } from "@/lib";
+import { Meta, Translation } from "@/lib";
 
 export default function HomeHero() {
   const { data, isLoading } = useHomeHero();
@@ -11,15 +11,15 @@ export default function HomeHero() {
   const isArabic = lang === "ar";
 
   const translation = data?.translations.find(
-    (t: PostTranslation) => t.locale === lang
+    (t: Translation) => t.locale === lang
   );
 
   const buttonMeta = data?.metas?.find(
-    (t: MetaField) => t.meta_key === "buttonText"
+    (t: Meta) => t.meta_key === "buttonText"
   );
 
   const buttonText = buttonMeta?.translations.find(
-    (tr: PostTranslation) => tr.locale === lang
+    (tr: Translation) => tr.locale === lang
   )?.value;
 
   return (
