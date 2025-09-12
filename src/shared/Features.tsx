@@ -2,11 +2,11 @@
 import { useContextProvider } from "@/context/Context";
 import useFeatures from "@/hooks/useFeatures";
 import { Item, Translation } from "@/lib";
-import { getImageUrl } from "@/Helpers/getImageUrl";
 
 import Image from "next/image";
 import React from "react";
 import Loading from "./Loading";
+import { getImageUrl } from "@/Helpers/getImageUrl";
 
 export default function Features() {
   const { data, isLoading } = useFeatures();
@@ -25,25 +25,17 @@ export default function Features() {
           const translation = f?.translations?.find(
             (t: Translation) => t.locale === lang
           );
-
-          // Use helper function to get the full image URL, with fallback to static SVG
-          const imageUrl =
-            getImageUrl(f.featured_image) || `/home-feature${index + 1}.svg`;
-
           return (
             <div
               key={index}
               className="flex flex-col gap-2 justify-center items-center"
             >
-              <div className="w-[70px] h-[70px] relative">
-                <Image
-                  src={imageUrl}
-                  alt={translation?.title || ""}
-                  fill
-                  className="object-cover"
-                  unoptimized={imageUrl.startsWith("http")}
-                />
-              </div>
+              <Image
+                src={getImageUrl(f.featured_image)}
+                alt={translation?.title || ""}
+                width={70}
+                height={70}
+              />
               <div className="text-primary-950 text-2xl">
                 {translation?.title}
               </div>
