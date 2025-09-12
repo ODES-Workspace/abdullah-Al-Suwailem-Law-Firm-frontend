@@ -10,6 +10,7 @@ import useFields from "@/hooks/useFields";
 import { useContextProvider } from "@/context/Context";
 import Loading from "./Loading";
 import { Item, Translation } from "@/lib";
+import { getImageUrl } from "@/Helpers/getImageUrl";
 
 const text = {
   ar: {
@@ -102,7 +103,7 @@ export default function Fields() {
                         <Image
                           width={17}
                           height={17}
-                          src={`/field${index + 1}.svg`}
+                          src={getImageUrl(f.featured_image)}
                           alt="field-icon"
                         />
                       </div>

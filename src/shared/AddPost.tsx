@@ -57,19 +57,19 @@ export default function AddPost({
 
   const onSubmit = (formData: FormValues) => {
     const payload: Item = {
-      post_type: "services",
-      slug: "services",
+      post_type: type,
+      slug: type,
       is_active: 1,
       translations: [
         {
           locale: "ar",
-          description: formData.desc_ar,
-          title: formData.title_ar,
+          description: formData.desc_ar || `${type}`,
+          title: formData.title_ar || `${type}`,
         },
         {
           locale: "en",
-          description: formData.desc_en,
-          title: formData.title_en,
+          description: formData.desc_en || `${type}`,
+          title: formData.title_en || `${type}`,
         },
       ],
     };

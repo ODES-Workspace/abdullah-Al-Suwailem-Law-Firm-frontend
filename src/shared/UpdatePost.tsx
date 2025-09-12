@@ -24,6 +24,7 @@ type UpdatePostProps = {
   title?: boolean;
   desc?: boolean;
   label?: string;
+  remove?: boolean;
 };
 
 export default function UpdatePost({
@@ -33,6 +34,7 @@ export default function UpdatePost({
   title = true,
   desc = true,
   label = "العنصر",
+  remove = true,
 }: UpdatePostProps) {
   const data = propData;
   const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -107,6 +109,10 @@ export default function UpdatePost({
     }
   };
 
+  if (!data || data.length === 0) {
+    return <div>لا يوجد {label} للتعديل.</div>;
+  }
+
   const onSubmit = (formData: FormValues) => {
     if (!selectedItem) return;
 
@@ -142,15 +148,21 @@ export default function UpdatePost({
         تعديل محتوى {label}
       </h1>
       <div className="mb-6 max-w-[1000px]">
-        <Select
-          options={options}
-          value={selectedId ? selectedId.toString() : ""}
-          onChange={(value) => setSelectedId(value ? Number(value) : null)}
-          placeholder={`اختر ${
-            type === "services" ? "خدمة" : type === "features" ? "ميزة" : "عنصر"
-          }`}
-          height="!h-[120px]"
-        />
+        {data.length > 1 && (
+          <Select
+            options={options}
+            value={selectedId ? selectedId.toString() : ""}
+            onChange={(value) => setSelectedId(value ? Number(value) : null)}
+            placeholder={`اختر ${
+              type === "services"
+                ? "خدمة"
+                : type === "features"
+                ? "ميزة"
+                : "عنصر"
+            }`}
+            height="!h-[120px]"
+          />
+        )}
       </div>
       {selectedItem && (
         <form
@@ -214,18 +226,20 @@ export default function UpdatePost({
             </div>
           )}
           <div className="col-span-2 flex gap-4 items-center justify-end">
-            <button
-              type="button"
-              onClick={handleDelete}
-              className="bg-red-500 text-white py-2 px-10 rounded-4xl cursor-pointer"
-            >
-              حذف{" "}
-              {type === "services"
-                ? "الخدمة"
-                : type === "features"
-                ? "الميزة"
-                : "العنصر"}
-            </button>
+            {remove && (
+              <button
+                type="button"
+                onClick={handleDelete}
+                className="bg-red-500 text-white py-2 px-10 rounded-4xl cursor-pointer"
+              >
+                حذف{" "}
+                {type === "services"
+                  ? "الخدمة"
+                  : type === "features"
+                  ? "الميزة"
+                  : "العنصر"}
+              </button>
+            )}
             <button
               type="submit"
               disabled={isPending}

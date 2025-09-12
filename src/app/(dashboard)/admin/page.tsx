@@ -6,7 +6,9 @@ import {
   PresidentForm,
   FeaturesForm,
   ServicesForm,
-  AddPost,
+  FieldsForm,
+  AccreditationForm,
+  PartnersForm,
 } from "@/shared";
 import Select from "@/shared/Select";
 import { useState } from "react";
@@ -18,6 +20,9 @@ const OPTIONS = [
   { label: "كلمة الرئيس", value: "president" },
   { label: "المميزات", value: "features" },
   { label: "الخدمات", value: "services" },
+  { label: "المجالات", value: "fields" },
+  { label: "الإعتمادات", value: "accreditations" },
+  { label: "شركاؤنا", value: "partners" },
 ];
 
 export default function Page() {
@@ -42,6 +47,9 @@ export default function Page() {
       {section === "president" && <PresidentForm />}
       {section === "features" && <FeaturesForm />}
       {section === "services" && <ServicesForm />}
+      {section === "fields" && <FieldsForm />}
+      {section === "accreditations" && <AccreditationForm />}
+      {section === "partners" && <PartnersForm />}
     </div>
   );
 }

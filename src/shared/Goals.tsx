@@ -1,4 +1,5 @@
 import { useContextProvider } from "@/context/Context";
+import { getImageUrl } from "@/Helpers/getImageUrl";
 import useMission from "@/hooks/useMission";
 import useVission from "@/hooks/useVission";
 import { Translation } from "@/lib";
@@ -10,11 +11,11 @@ export default function Goals({ className }: { className?: string }) {
   const { data: vission, isLoading: vissionLoading } = useVission();
   const { lang } = useContextProvider();
 
-  const missionText = mission?.translations?.find(
+  const missionText = mission?.[0]?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 
-  const vissionText = vission?.translations?.find(
+  const vissionText = vission?.[0]?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 
@@ -28,12 +29,12 @@ export default function Goals({ className }: { className?: string }) {
         <div
           className={` ${className} flex flex-col lg:flex-row text-center lg:text-start  gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl `}
         >
-          <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
+          <div className="w-[95px] h-[95px] rounded-xl flex-shrink-0 bg-secondary flex justify-center items-center">
             <Image
-              src="/vission.svg"
+              src={getImageUrl(vission?.[0]?.featured_image)}
               alt={vissionText?.title || ""}
-              width={57}
-              height={57}
+              width={50}
+              height={50}
             />
           </div>
           <div className="flex flex-col gap-4">
@@ -44,12 +45,12 @@ export default function Goals({ className }: { className?: string }) {
         <div
           className={` ${className} flex flex-col lg:flex-row text-center lg:text-start gap-4 items-center py-4 shadow-primary px-5 bg-white rounded-2xl`}
         >
-          <div className="p-5 rounded-xl flex-shrink-0 bg-secondary">
+          <div className="w-[95px] h-[95px] rounded-xl flex-shrink-0 bg-secondary flex justify-center items-center">
             <Image
-              src="/mission.svg"
+              src={getImageUrl(mission?.[0]?.featured_image)}
               alt={vissionText?.title || ""}
-              width={57}
-              height={57}
+              width={30}
+              height={50}
             />
           </div>
           <div className="flex flex-col gap-4">

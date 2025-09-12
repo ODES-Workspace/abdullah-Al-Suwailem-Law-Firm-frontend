@@ -23,4 +23,7 @@ export { default as PresidentForm } from "./PresidentForm";
 export { default as FormField } from "./FormField";
 export { default as FeaturesForm } from "./FeaturesForm";
 export { default as ServicesForm } from "./ServicesForm";
+export { default as FieldsForm } from "./FieldsForm";
 export { default as AddPost } from "./AddPost";
+export { default as AccreditationForm } from "./AccreditationForm";
+export { default as PartnersForm } from "./PartnersForm";
