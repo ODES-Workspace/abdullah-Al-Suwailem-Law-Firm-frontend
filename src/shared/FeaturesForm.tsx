@@ -7,15 +7,18 @@ import FormField from "./FormField";
 import { useFeatures } from "@/hooks";
 import { Item } from "@/lib";
 import Select from "./Select";
+import Image from "next/image";
 
 type FormValues = {
   title_ar: string;
   title_en: string;
+  featured_image?: string;
 };
 
 export default function FeaturesForm() {
   const { data } = useFeatures();
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>("");
 
   const options =
     data?.map((feature: Item) => ({
@@ -30,7 +33,7 @@ export default function FeaturesForm() {
     }
   }, [data, selectedId]);
 
-  const { register, handleSubmit, reset } = useForm<FormValues>({});
+  const { register, handleSubmit, reset, setValue } = useForm<FormValues>({});
 
   const { mutate, isPending } = useUpdatePost();
 
@@ -44,8 +47,23 @@ export default function FeaturesForm() {
         title_en:
           getTranslation(selectedItem.translations, "en", "title") || "",
       });
+      setImagePreview(selectedItem.featured_image || "");
     }
   }, [selectedItem, reset]);
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const base64String = reader.result as string;
+        setValue("featured_image", base64String);
+        setImagePreview(base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const onSubmit = (formData: FormValues) => {
     if (!selectedItem) return;
@@ -54,6 +72,7 @@ export default function FeaturesForm() {
       id: selectedItem.id,
       post_type: selectedItem.post_type,
       slug: `${selectedItem.post_type}-${selectedItem.id}`,
+      featured_image: formData.featured_image || null,
       is_active: 1,
       translations: [
         {
@@ -81,6 +100,7 @@ export default function FeaturesForm() {
           value={selectedId ? selectedId.toString() : ""}
           onChange={(value) => setSelectedId(value ? Number(value) : null)}
           placeholder="اختر ميزة"
+          height="!h-[120px]"
         />
       </div>
       {selectedItem && (
@@ -98,7 +118,27 @@ export default function FeaturesForm() {
             name="title_en"
             label="العنوان  (EN)"
           />
-
+          {/* Image Upload */}
+          <div className="col-span-2 flex flex-col gap-2">
+            <label className="text-primary font-bold">الصورة المميزة</label>
+            <input
+              type="file"
+              accept="image/png"
+              onChange={handleImageChange}
+              className="border p-2 border-primary rounded-xl"
+            />
+            {imagePreview && (
+              <div className="mt-2">
+                <Image
+                  width={100}
+                  height={100}
+                  src={imagePreview}
+                  alt="Preview"
+                  className="w-32 h-32 object-cover rounded-xl border border-primary"
+                />
+              </div>
+            )}
+          </div>
           <div className="col-span-2 flex justify-end ">
             <button
               type="submit"

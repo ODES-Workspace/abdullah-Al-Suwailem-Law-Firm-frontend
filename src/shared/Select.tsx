@@ -18,6 +18,7 @@ type SelectProps = {
   className?: string;
   variant?: "primary" | "secondary";
   optional?: boolean;
+  height?: string;
 };
 export default function Select({
   options,
@@ -26,6 +27,7 @@ export default function Select({
   placeholder,
   optional,
   className,
+  height,
   variant = "primary",
 }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,7 +98,9 @@ export default function Select({
         />
       </button>
       {isOpen && (
-        <ul className="absolute top-full w-full cursor-pointer z-5 bg-neutral-100 shadow-primary py-2 h-[200px] overflow-y-auto">
+        <ul
+          className={`absolute top-full w-full cursor-pointer z-5 bg-neutral-100 shadow-primary py-2 h-[200px] overflow-y-auto ${height}`}
+        >
           {options.map((option) => (
             <li
               key={option.value}
