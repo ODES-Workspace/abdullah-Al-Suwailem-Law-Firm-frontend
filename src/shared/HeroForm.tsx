@@ -1,8 +1,7 @@
 "use client";
 import { getMetaTranslation } from "@/Helpers/getMetaTranslation";
 import { getTranslation } from "@/Helpers/getTranslation";
-import { useHomeHero } from "@/hooks";
-import { useUpdatePost } from "@/hooks/usePost";
+import { usePost, useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
@@ -17,7 +16,7 @@ type FormValues = {
 };
 
 export default function HeroForm() {
-  const { data, isLoading } = useHomeHero();
+  const { data, isLoading } = usePost("hero");
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
@@ -26,19 +25,19 @@ export default function HeroForm() {
   useEffect(() => {
     if (data) {
       reset({
-        title_ar: getTranslation(data.translations, "ar", "title"),
-        title_en: getTranslation(data.translations, "en", "title"),
-        desc_ar: getTranslation(data.translations, "ar", "description"),
-        desc_en: getTranslation(data.translations, "en", "description"),
-        btn_ar: getMetaTranslation(data.metas, "buttonText", "ar"),
-        btn_en: getMetaTranslation(data.metas, "buttonText", "en"),
+        title_ar: getTranslation(data[0].translations, "ar", "title"),
+        title_en: getTranslation(data[0].translations, "en", "title"),
+        desc_ar: getTranslation(data[0].translations, "ar", "description"),
+        desc_en: getTranslation(data[0].translations, "en", "description"),
+        btn_ar: getMetaTranslation(data[0].metas, "buttonText", "ar"),
+        btn_en: getMetaTranslation(data[0].metas, "buttonText", "en"),
       });
     }
   }, [data, reset]);
 
   const onSubmit = (formData: FormValues) => {
     const payload = {
-      id: data?.id,
+      id: data[0]?.id,
       post_type: "hero",
       slug: "hero-section",
       is_active: 1,

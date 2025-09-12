@@ -1,14 +1,14 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import useAccreditations from "@/hooks/useAccreditations";
 import Image from "next/image";
 import React from "react";
 import Loading from "./Loading";
 import { Item, Translation } from "@/lib";
 import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 export default function Accreditations() {
-  const { isLoading, data } = useAccreditations();
+  const { isLoading, data } = usePost("accreditations");
   const { lang } = useContextProvider();
   if (isLoading) {
     return (

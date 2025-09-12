@@ -1,10 +1,10 @@
 import React from "react";
 import AddPost from "./AddPost";
 import UpdatePost from "./UpdatePost";
-import { useFields } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 
 export default function FieldsForm() {
-  const { data, isLoading } = useFields();
+  const { data, isLoading } = usePost("fields");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

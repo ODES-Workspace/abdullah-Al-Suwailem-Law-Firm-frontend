@@ -1,10 +1,10 @@
 import React from "react";
 import AddPost from "./AddPost";
 import UpdatePost from "./UpdatePost";
-import { useFeatures } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 
 export default function FeaturesForm() {
-  const { data, isLoading } = useFeatures();
+  const { data, isLoading } = usePost("features");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

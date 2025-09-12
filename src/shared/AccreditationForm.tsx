@@ -1,10 +1,10 @@
 import React from "react";
 import AddPost from "./AddPost";
 import UpdatePost from "./UpdatePost";
-import { useAccreditations } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 
 export default function AccreditationForm() {
-  const { data, isLoading } = useAccreditations();
+  const { data, isLoading } = usePost("accreditations");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

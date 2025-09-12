@@ -1,10 +1,10 @@
 import React from "react";
 import AddPost from "./AddPost";
 import UpdatePost from "./UpdatePost";
-import { usePartners } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 
 export default function PartnersForm() {
-  const { data, isLoading } = usePartners();
+  const { data, isLoading } = usePost("partners");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

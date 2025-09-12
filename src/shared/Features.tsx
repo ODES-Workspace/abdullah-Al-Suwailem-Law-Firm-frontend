@@ -1,15 +1,15 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import useFeatures from "@/hooks/useFeatures";
 import { Item, Translation } from "@/lib";
 
 import Image from "next/image";
 import React from "react";
 import Loading from "./Loading";
 import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 export default function Features() {
-  const { data, isLoading } = useFeatures();
+  const { data, isLoading } = usePost("features");
   const { lang } = useContextProvider();
 
   if (isLoading) {

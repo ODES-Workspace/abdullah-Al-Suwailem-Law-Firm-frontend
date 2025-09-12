@@ -71,6 +71,7 @@ export default function Page() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     <a
                       href={`tel:${phone}`}
+                      dir="ltr"
                       className="text-primary hover:text-primary-600 transition-colors"
                     >
                       {phone}

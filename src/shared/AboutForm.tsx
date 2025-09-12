@@ -1,9 +1,9 @@
 import React from "react";
 import UpdatePost from "./UpdatePost";
-import { useAbout } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 
 export default function AboutForm() {
-  const { data, isLoading } = useAbout();
+  const { data, isLoading } = usePost("about");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

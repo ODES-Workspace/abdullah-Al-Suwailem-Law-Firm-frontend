@@ -1,16 +1,16 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import { usePartners } from "@/hooks";
 import Image from "next/image";
 import React from "react";
 import Loading from "./Loading";
 import { Item } from "@/lib";
 import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 export default function Partners() {
   const { lang } = useContextProvider();
 
-  const { data, isLoading } = usePartners();
+  const { data, isLoading } = usePost("partners");
 
   if (isLoading) {
     return <Loading>جاري التحميل...</Loading>;

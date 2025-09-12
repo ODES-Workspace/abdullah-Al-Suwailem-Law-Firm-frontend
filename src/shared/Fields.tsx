@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/bundle";
 import Link from "next/link";
-import useFields from "@/hooks/useFields";
 import { useContextProvider } from "@/context/Context";
 import Loading from "./Loading";
 import { Item, Translation } from "@/lib";
 import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 const text = {
   ar: {
@@ -29,7 +29,7 @@ const text = {
 };
 
 export default function Fields() {
-  const { data, isLoading } = useFields();
+  const { data, isLoading } = usePost("fields");
   const { lang } = useContextProvider();
 
   if (isLoading) {

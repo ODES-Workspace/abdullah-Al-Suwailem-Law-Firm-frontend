@@ -1,7 +1,7 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
 import { getImageUrl } from "@/Helpers/getImageUrl";
-import useServices from "@/hooks/useServices";
+import { usePost } from "@/hooks/usePost";
 import { Item, Translation } from "@/lib";
 import { Loading } from "@/shared";
 import Image from "next/image";
@@ -21,7 +21,7 @@ const text = {
 
 export default function Page() {
   const { lang, handleModelDisplay } = useContextProvider();
-  const { data, isLoading } = useServices();
+  const { data, isLoading } = usePost("services");
 
   return (
     <>

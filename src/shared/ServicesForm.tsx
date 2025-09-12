@@ -1,10 +1,10 @@
 import React from "react";
 import AddPost from "./AddPost";
 import UpdatePost from "./UpdatePost";
-import useServices from "@/hooks/useServices";
+import { usePost } from "@/hooks/usePost";
 
 export default function ServicesForm() {
-  const { data, isLoading } = useServices();
+  const { data, isLoading } = usePost("services");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

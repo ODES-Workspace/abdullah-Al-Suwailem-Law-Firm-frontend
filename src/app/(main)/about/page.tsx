@@ -1,13 +1,13 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
 import { getTranslation } from "@/Helpers/getTranslation";
-import { useAbout } from "@/hooks";
+import { usePost } from "@/hooks/usePost";
 import { Goals, Loading, PresidentsMessage } from "@/shared";
 import React from "react";
 
 export default function Page() {
   const { lang } = useContextProvider();
-  const { data, isLoading } = useAbout();
+  const { data, isLoading } = usePost("about");
 
   const title = getTranslation(data?.[0]?.translations, lang, "title") || [];
   const desc =

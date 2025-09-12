@@ -4,10 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Loading from "./Loading";
-import useServices from "@/hooks/useServices";
 import { Item, Translation } from "@/lib";
-import { get } from "http";
 import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 const text = {
   ar: {
@@ -26,7 +25,7 @@ const text = {
 };
 
 export default function HomeServices() {
-  const { isLoading, data } = useServices();
+  const { isLoading, data } = usePost("services");
   const { lang, handleModelDisplay } = useContextProvider();
 
   if (isLoading) {

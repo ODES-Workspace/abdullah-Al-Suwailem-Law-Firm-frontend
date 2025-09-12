@@ -1,9 +1,9 @@
 import React from "react";
 import UpdatePost from "./UpdatePost";
-import useVission from "@/hooks/useVission";
+import { usePost } from "@/hooks/usePost";
 
 export default function VissionForm() {
-  const { data, isLoading } = useVission();
+  const { data, isLoading } = usePost("vission");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

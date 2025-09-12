@@ -1,14 +1,13 @@
 import { useContextProvider } from "@/context/Context";
 import { getImageUrl } from "@/Helpers/getImageUrl";
-import useMission from "@/hooks/useMission";
-import useVission from "@/hooks/useVission";
+import { usePost } from "@/hooks/usePost";
 import { Translation } from "@/lib";
 import Image from "next/image";
 import React from "react";
 
 export default function Goals({ className }: { className?: string }) {
-  const { data: mission, isLoading: missionLoading } = useMission();
-  const { data: vission, isLoading: vissionLoading } = useVission();
+  const { data: mission, isLoading: missionLoading } = usePost("mission");
+  const { data: vission, isLoading: vissionLoading } = usePost("vission");
   const { lang } = useContextProvider();
 
   const missionText = mission?.[0]?.translations?.find(

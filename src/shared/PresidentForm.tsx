@@ -1,8 +1,7 @@
 "use client";
 import { getMetaTranslation } from "@/Helpers/getMetaTranslation";
 import { getTranslation } from "@/Helpers/getTranslation";
-import { usePresident } from "@/hooks";
-import { useUpdatePost } from "@/hooks/usePost";
+import { usePost, useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
@@ -25,7 +24,7 @@ type FormValues = {
 };
 
 export default function PresidentForm() {
-  const { data } = usePresident();
+  const { data } = usePost("president");
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
@@ -34,35 +33,59 @@ export default function PresidentForm() {
   useEffect(() => {
     if (data) {
       reset({
-        title_ar: getTranslation(data.translations, "ar", "title"),
-        title_en: getTranslation(data.translations, "en", "title"),
-        desc_ar: getTranslation(data.translations, "ar", "description"),
-        desc_en: getTranslation(data.translations, "en", "description"),
-        role_ar: getMetaTranslation(data.metas, "role", "ar"),
-        role_en: getMetaTranslation(data.metas, "role", "en"),
-        message_title_en: getMetaTranslation(data.metas, "message-title", "en"),
-        message_title_ar: getMetaTranslation(data.metas, "message-title", "ar"),
-        message_first_ar: getMetaTranslation(data.metas, "message-first", "ar"),
-        message_first_en: getMetaTranslation(data.metas, "message-first", "en"),
+        title_ar: getTranslation(data[0].translations, "ar", "title"),
+        title_en: getTranslation(data[0].translations, "en", "title"),
+        desc_ar: getTranslation(data[0].translations, "ar", "description"),
+        desc_en: getTranslation(data[0].translations, "en", "description"),
+        role_ar: getMetaTranslation(data[0].metas, "role", "ar"),
+        role_en: getMetaTranslation(data[0].metas, "role", "en"),
+        message_title_en: getMetaTranslation(
+          data[0].metas,
+          "message-title",
+          "en"
+        ),
+        message_title_ar: getMetaTranslation(
+          data[0].metas,
+          "message-title",
+          "ar"
+        ),
+        message_first_ar: getMetaTranslation(
+          data[0].metas,
+          "message-first",
+          "ar"
+        ),
+        message_first_en: getMetaTranslation(
+          data[0].metas,
+          "message-first",
+          "en"
+        ),
         message_second_ar: getMetaTranslation(
-          data.metas,
+          data[0].metas,
           "message-second",
           "ar"
         ),
         message_second_en: getMetaTranslation(
-          data.metas,
+          data[0].metas,
           "message-second",
           "en"
         ),
-        message_third_ar: getMetaTranslation(data.metas, "message-third", "ar"),
-        message_third_en: getMetaTranslation(data.metas, "message-third", "en"),
+        message_third_ar: getMetaTranslation(
+          data[0].metas,
+          "message-third",
+          "ar"
+        ),
+        message_third_en: getMetaTranslation(
+          data[0].metas,
+          "message-third",
+          "en"
+        ),
       });
     }
   }, [data, reset]);
 
   const onSubmit = (formData: FormValues) => {
     const payload = {
-      id: data?.id,
+      id: data[0]?.id,
       post_type: "president",
       slug: "president",
       is_active: 1,

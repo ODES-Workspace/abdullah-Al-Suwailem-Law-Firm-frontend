@@ -1,9 +1,9 @@
 import React from "react";
 import UpdatePost from "./UpdatePost";
-import useMission from "@/hooks/useMission";
+import { usePost } from "@/hooks/usePost";
 
 export default function MissionForm() {
-  const { data, isLoading } = useMission();
+  const { data, isLoading } = usePost("mission");
   if (isLoading) {
     return <div>جاري التحميل...</div>;
   }

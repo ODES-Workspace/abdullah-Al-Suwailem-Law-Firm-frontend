@@ -1,31 +1,31 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import usePresident from "@/hooks/usePresident";
 import { cn, Translation } from "@/lib";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Loading from "./Loading";
 import GetMetaText from "@/lib/getMetaText";
+import { usePost } from "@/hooks/usePost";
 
 export default function PresidentsMessage({
   borderBottom = true,
 }: {
   borderBottom?: boolean;
 }) {
-  const { data, isLoading } = usePresident();
+  const { data, isLoading } = usePost("president");
   const { lang } = useContextProvider();
 
-  const translation = data?.translations?.find(
+  const translation = data?.[0]?.translations?.find(
     (t: Translation) => t.locale === lang
   );
-  const names = translation?.title.split(" ");
+  const names = translation?.[0]?.title.split(" ");
 
-  const role = GetMetaText("role", data) || "";
-  const messagetitle = GetMetaText("message-title", data) || "";
-  const messagefirst = GetMetaText("message-first", data) || "";
-  const messagesecond = GetMetaText("message-second", data) || "";
-  const messagethird = GetMetaText("message-third", data) || "";
+  const role = GetMetaText("role", data?.[0]) || "";
+  const messagetitle = GetMetaText("message-title", data?.[0]) || "";
+  const messagefirst = GetMetaText("message-first", data?.[0]) || "";
+  const messagesecond = GetMetaText("message-second", data?.[0]) || "";
+  const messagethird = GetMetaText("message-third", data?.[0]) || "";
 
   if (isLoading) {
     return (
@@ -61,7 +61,7 @@ export default function PresidentsMessage({
 
           <div className="gap-1 flex flex-col ">
             <div className=" text-3xl md:text-4xl lg:text-5xl leading-[60px] font-bold gap-2 flex">
-              {names.map((n: string, index: number) => (
+              {names?.map((n: string, index: number) => (
                 <span
                   key={index}
                   className={`${index === 0 ? "text-black" : "text-primary"}`}
@@ -92,7 +92,7 @@ export default function PresidentsMessage({
           </div>
 
           <Link
-            href={data.slug}
+            href={data?.[0]?.slug}
             className="bg-primary max-w-[230px] w-full py-3 text-center flex justify-center rounded-3xl underline text-white"
           >
             {lang === "ar" ? "اقرأ المزيد" : "Read More"}
