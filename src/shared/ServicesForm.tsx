@@ -5,19 +5,21 @@ import { useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
-import { useFeatures } from "@/hooks";
 import { Item } from "@/lib";
 import Select from "./Select";
 import Image from "next/image";
+import useServices from "@/hooks/useServices";
 
 type FormValues = {
   title_ar: string;
   title_en: string;
+  desc_ar: string;
+  desc_en: string;
   featured_image?: string;
 };
 
-export default function FeaturesForm() {
-  const { data } = useFeatures();
+export default function ServicesForm() {
+  const { data } = useServices();
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [imagePreview, setImagePreview] = useState<string>("");
   const [hasNewImage, setHasNewImage] = useState<boolean>(false);
@@ -49,6 +51,10 @@ export default function FeaturesForm() {
           getTranslation(selectedItem.translations, "ar", "title") || "",
         title_en:
           getTranslation(selectedItem.translations, "en", "title") || "",
+        desc_ar:
+          getTranslation(selectedItem.translations, "ar", "description") || "",
+        desc_en:
+          getTranslation(selectedItem.translations, "en", "description") || "",
       });
       setImagePreview(getImageUrl(selectedItem.featured_image));
       setHasNewImage(false);
@@ -86,10 +92,12 @@ export default function FeaturesForm() {
       translations: [
         {
           locale: "ar",
+          description: formData.desc_ar,
           title: formData.title_ar,
         },
         {
           locale: "en",
+          description: formData.desc_en,
           title: formData.title_en,
         },
       ],
@@ -105,7 +113,7 @@ export default function FeaturesForm() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-primary mb-6">
-        تعديل محتوى المميزات
+        تعديل محتوى الخدمات
       </h1>
       <div className="mb-6 max-w-[1000px]">
         <Select
@@ -130,6 +138,18 @@ export default function FeaturesForm() {
             register={register}
             name="title_en"
             label="العنوان  (EN)"
+          />
+          <FormField
+            register={register}
+            name="desc_ar"
+            label="العنوان  (AR)"
+            as="textarea"
+          />
+          <FormField
+            register={register}
+            name="desc_en"
+            label="العنوان  (EN)"
+            as="textarea"
           />
           {/* Image Upload */}
           <div className="col-span-2 flex flex-col gap-2">

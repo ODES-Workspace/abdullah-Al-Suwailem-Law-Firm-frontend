@@ -1,5 +1,6 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
+import { getImageUrl } from "@/Helpers/getImageUrl";
 import useServices from "@/hooks/useServices";
 import { Item, Translation } from "@/lib";
 import { Loading } from "@/shared";
@@ -41,7 +42,7 @@ export default function Page() {
       ) : (
         <div className="py-20 px-5">
           <div className="max-w-[1233px] mx-auto  grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.map((s: Item, index: number) => {
+            {data.map((s: Item) => {
               const translation = s?.translations?.find(
                 (t: Translation) => t.locale === lang
               );
@@ -51,7 +52,7 @@ export default function Page() {
                   className="bg-primary-400 min-h-[538px]  p-6 flex flex-col gap-[10px] items-center text-center rounded-2xl service-card"
                 >
                   <Image
-                    src={`service${index + 1}.svg`}
+                    src={getImageUrl(s.featured_image)}
                     alt={translation?.title || ""}
                     width={100}
                     height={100}

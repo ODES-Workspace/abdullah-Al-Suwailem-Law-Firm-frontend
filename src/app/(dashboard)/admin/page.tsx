@@ -5,6 +5,7 @@ import {
   VissionForm,
   PresidentForm,
   FeaturesForm,
+  ServicesForm,
 } from "@/shared";
 import Select from "@/shared/Select";
 import { useState } from "react";
@@ -15,6 +16,7 @@ const OPTIONS = [
   { label: "الرسالة", value: "mission" },
   { label: "كلمة الرئيس", value: "president" },
   { label: "المميزات", value: "features" },
+  { label: "الخدمات", value: "services" },
 ];
 
 export default function Page() {
@@ -38,6 +40,7 @@ export default function Page() {
       {section === "mission" && <MissionForm />}
       {section === "president" && <PresidentForm />}
       {section === "features" && <FeaturesForm />}
+      {section === "services" && <ServicesForm />}
     </div>
   );
 }
