@@ -1,11 +1,11 @@
 import React from "react";
 import Input from "./Input";
 import Select from "./Select";
-import useServices from "@/hooks/useServices";
 import { useContextProvider } from "@/context/Context";
 import { Item, Meta, Translation } from "@/lib";
 import { Controller, useForm } from "react-hook-form";
 import { useAddConsultation } from "@/hooks/useConsultations";
+import { usePost } from "@/hooks/usePost";
 
 type FormValues = {
   name: string;
@@ -16,7 +16,7 @@ type FormValues = {
 };
 
 export default function ConsultationForm() {
-  const { data } = useServices();
+  const { data } = usePost("services");
   const { lang, handleModelDisplay } = useContextProvider();
 
   const { mutate, isPending, isSuccess, isError } = useAddConsultation();

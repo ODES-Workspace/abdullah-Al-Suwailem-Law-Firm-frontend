@@ -1,13 +1,14 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import useAccreditations from "@/hooks/useAccreditations";
 import Image from "next/image";
 import React from "react";
 import Loading from "./Loading";
 import { Item, Translation } from "@/lib";
+import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 export default function Accreditations() {
-  const { isLoading, data } = useAccreditations();
+  const { isLoading, data } = usePost("accreditations");
   const { lang } = useContextProvider();
   if (isLoading) {
     return (
@@ -21,7 +22,7 @@ export default function Accreditations() {
           {lang === "ar" ? "الإعتمادات" : "Accreditations"}
         </div>
         <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-          {data.map((a: Item, index: number) => {
+          {data.map((a: Item) => {
             const translation = a?.translations?.find(
               (t: Translation) => t.locale === lang
             );
@@ -29,7 +30,7 @@ export default function Accreditations() {
               <div key={a.id} className="flex flex-col ">
                 <div className="relative h-[50px] mb-6">
                   <Image
-                    src={`/accreditation${index + 1}.svg`}
+                    src={getImageUrl(a.featured_image)}
                     alt={translation?.title || ""}
                     fill
                     className="!w-fit h-full "

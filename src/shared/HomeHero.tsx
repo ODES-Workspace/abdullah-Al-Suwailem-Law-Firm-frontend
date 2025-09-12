@@ -1,20 +1,20 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
-import useHomeHero from "@/hooks/useHomeHero";
 import React from "react";
 import Goals from "./Goals";
 import { Meta, Translation } from "@/lib";
+import { usePost } from "@/hooks/usePost";
 
 export default function HomeHero() {
-  const { data, isLoading } = useHomeHero();
+  const { data, isLoading } = usePost("hero");
   const { lang } = useContextProvider();
   const isArabic = lang === "ar";
 
-  const translation = data?.translations?.find(
+  const translation = data?.[0]?.translations?.find(
     (t: Translation) => t.locale === lang
   );
 
-  const buttonMeta = data?.metas?.find(
+  const buttonMeta = data?.[0]?.metas?.find(
     (t: Meta) => t.meta_key === "buttonText"
   );
 
@@ -38,9 +38,9 @@ export default function HomeHero() {
                     isArabic ? "lg:leading-[101px]" : "lg:leading-[70px]"
                   }`}
                 >
-                  {translation.title}
+                  {translation?.title}
                 </h1>
-                <p className="text-lg">{translation.description}</p>
+                <p className="text-lg">{translation?.description}</p>
 
                 <div className="bg-primary py-2 px-4 text-white rounded-4xl cursor-pointer w-fit">
                   &quot;{buttonText}&quot;

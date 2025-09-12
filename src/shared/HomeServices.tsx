@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Loading from "./Loading";
-import useServices from "@/hooks/useServices";
 import { Item, Translation } from "@/lib";
+import { getImageUrl } from "@/Helpers/getImageUrl";
+import { usePost } from "@/hooks/usePost";
 
 const text = {
   ar: {
@@ -24,7 +25,7 @@ const text = {
 };
 
 export default function HomeServices() {
-  const { isLoading, data } = useServices();
+  const { isLoading, data } = usePost("services");
   const { lang, handleModelDisplay } = useContextProvider();
 
   if (isLoading) {
@@ -51,7 +52,7 @@ export default function HomeServices() {
           </Link>
         </div>
         <div className="grid mdgrid-cols-2 lg:grid-cols-3 gap-6">
-          {data.slice(0, 6).map((s: Item, index: number) => {
+          {data.slice(0, 6).map((s: Item) => {
             const translation = s?.translations?.find(
               (t: Translation) => t.locale === lang
             );
@@ -64,7 +65,7 @@ export default function HomeServices() {
                   <div className="flex items-center gap-4 ">
                     <div className="p-1 bg-neutral-100/25 rounded-lg h-full">
                       <Image
-                        src={`home-service${index + 1}.svg`}
+                        src={getImageUrl(s.featured_image)}
                         alt="test"
                         width={32}
                         height={32}

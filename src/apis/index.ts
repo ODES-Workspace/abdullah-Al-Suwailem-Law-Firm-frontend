@@ -1,10 +1,1 @@
-export { default as getHomeHero } from "./getHomeHero";
-export { default as getPresident } from "./getPresident";
-export { default as getFeatures } from "./getFeatures";
-export { default as getHomeServices } from "./getHomeServices";
-export { default as getFields } from "./getFields";
-export { default as getAccreditations } from "./getAccreditations";
-export { default as getPartners } from "./getPartners";
-export { default as getAbout } from "./getAbout";
-export { default as getMission } from "./getMission";
-export { default as getVission } from "./getVission";
+export { default as getPost } from "./getPost";
