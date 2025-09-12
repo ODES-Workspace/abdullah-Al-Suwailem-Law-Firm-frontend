@@ -17,7 +17,7 @@ type FormValues = {
 };
 
 export default function HeroForm() {
-  const { data } = useHomeHero();
+  const { data, isLoading } = useHomeHero();
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
@@ -74,6 +74,10 @@ export default function HeroForm() {
 
     mutate(payload);
   };
+
+  if (isLoading) {
+    return <div>جاري التحميل...</div>;
+  }
 
   return (
     <div>
