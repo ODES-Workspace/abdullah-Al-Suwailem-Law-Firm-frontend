@@ -1,6 +1,8 @@
 import useLogout from "@/hooks/useLogout";
 import { cn } from "@/lib";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const LINKS = [
@@ -9,13 +11,14 @@ const LINKS = [
     href: "/admin",
   },
   {
-    consultations: "الاستشارات",
+    name: "الاستشارات",
     href: "/admin/consultations",
   },
   { name: "الخدمات", href: "/admin/services" },
 ];
 
 export default function DashboardSidebar() {
+  const pathname = usePathname();
   const [user] = useState(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("user");
@@ -52,17 +55,16 @@ export default function DashboardSidebar() {
 
       <div className="flex flex-col gap-2">
         {LINKS.map((link) => (
-          <a
+          <Link
             href={link.href}
             key={link.href}
             className={cn(
-              link.href === window.location.pathname &&
-                "bg-primary-400 text-white",
+              pathname === link.href && "bg-primary-400 text-white",
               "text-lg hover:bg-primary-400 hover:text-white transition-colors duration-300 p-2 rounded-lg"
             )}
           >
-            {link.name || link.consultations}
-          </a>
+            {link.name}
+          </Link>
         ))}
       </div>
 
