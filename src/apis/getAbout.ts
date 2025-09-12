@@ -2,7 +2,7 @@ import { axiosInstance } from "@/lib";
 
 async function getAbout() {
   try {
-    const res = await axiosInstance.get("/about.json");
+    const res = await axiosInstance.get("/posts?type=about");
     return res.data;
   } catch (error) {
     console.error("Error fetching about data:", error);

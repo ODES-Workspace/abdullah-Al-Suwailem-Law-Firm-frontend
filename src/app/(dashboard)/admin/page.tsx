@@ -9,6 +9,7 @@ import {
   FieldsForm,
   AccreditationForm,
   PartnersForm,
+  AboutForm,
 } from "@/shared";
 import Select from "@/shared/Select";
 import { useState } from "react";
@@ -16,6 +17,7 @@ import { useState } from "react";
 const OPTIONS = [
   { label: "القسم الرئيسي", value: "hero" },
   { label: "الرؤية", value: "vission" },
+  { label: "عن الشركة", value: "about" },
   { label: "الرسالة", value: "mission" },
   { label: "كلمة الرئيس", value: "president" },
   { label: "المميزات", value: "features" },
@@ -50,6 +52,7 @@ export default function Page() {
       {section === "fields" && <FieldsForm />}
       {section === "accreditations" && <AccreditationForm />}
       {section === "partners" && <PartnersForm />}
+      {section === "about" && <AboutForm />}
     </div>
   );
 }
