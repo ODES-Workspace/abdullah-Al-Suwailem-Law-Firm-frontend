@@ -9,7 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Production
-
+    env:
+      NEXT_PUBLIC_BASE_URL: 'http://64.226.117.146:8080'
+      
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
