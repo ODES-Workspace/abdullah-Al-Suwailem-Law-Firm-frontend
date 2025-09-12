@@ -1,5 +1,6 @@
 "use client";
 import { getTranslation } from "@/Helpers/getTranslation";
+import { getImageUrl } from "@/Helpers/getImageUrl";
 import { useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -47,7 +48,8 @@ export default function FeaturesForm() {
         title_en:
           getTranslation(selectedItem.translations, "en", "title") || "",
       });
-      setImagePreview(selectedItem.featured_image || "");
+      // Use helper function to get the full image URL
+      setImagePreview(getImageUrl(selectedItem.featured_image));
     }
   }, [selectedItem, reset]);
 
@@ -135,6 +137,8 @@ export default function FeaturesForm() {
                   src={imagePreview}
                   alt="Preview"
                   className="w-32 h-32 object-cover rounded-xl border border-primary"
+                  // Add unoptimized prop for external URLs
+                  unoptimized={imagePreview.startsWith("http")}
                 />
               </div>
             )}
