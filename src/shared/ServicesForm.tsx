@@ -142,13 +142,14 @@ export default function ServicesForm() {
           <FormField
             register={register}
             name="desc_ar"
-            label="العنوان  (AR)"
+            label="الوصف (AR)
+"
             as="textarea"
           />
           <FormField
             register={register}
             name="desc_en"
-            label="العنوان  (EN)"
+            label="الوصف (EN)"
             as="textarea"
           />
           {/* Image Upload */}

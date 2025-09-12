@@ -3,15 +3,17 @@ import updatePost from "@/apis/updatePost";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-export const useAddPost = () => {
+export const useAddPost = (queryKey: string) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
+      queryClient.invalidateQueries({ queryKey: [queryKey] });
+      toast.success("تم إضافة البيانات بنجاح");
     },
     onError: (error) => {
       console.log(error);
+      toast.error("حدث خطأ ما، حاول مرة أخرى");
     },
   });
 };
