@@ -19,12 +19,12 @@ export const useAddPost = (queryKey: string) => {
   });
 };
 
-export const useUpdatePost = () => {
+export const useUpdatePost = (queryKey: string) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: updatePost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
+      queryClient.invalidateQueries({ queryKey: [queryKey] });
       toast.success("تم تحديث البيانات بنجاح");
     },
     onError: (error) => {

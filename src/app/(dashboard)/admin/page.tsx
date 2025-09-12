@@ -41,12 +41,7 @@ export default function Page() {
       {section === "mission" && <MissionForm />}
       {section === "president" && <PresidentForm />}
       {section === "features" && <FeaturesForm />}
-      {section === "services" && (
-        <div className="flex flex-col gap-10">
-          <ServicesForm />
-          <AddPost type="services" />
-        </div>
-      )}
+      {section === "services" && <ServicesForm />}
     </div>
   );
 }
