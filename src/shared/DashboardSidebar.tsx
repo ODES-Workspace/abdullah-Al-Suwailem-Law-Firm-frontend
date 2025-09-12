@@ -46,8 +46,8 @@ export default function DashboardSidebar() {
         className="mx-auto"
       />
       <div className="text-center items-center flex flex-col gap-1 justify-center text-primary-950">
-        <div className="font-bold text-3xl">{user.name}</div>
-        <div className="text-lg">{user.email}</div>
+        <div className="font-bold text-3xl">{user?.name}</div>
+        <div className="text-lg">{user?.email}</div>
       </div>
 
       <div className="flex flex-col gap-2">

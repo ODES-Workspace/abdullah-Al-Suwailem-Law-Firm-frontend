@@ -1,6 +1,6 @@
 "use client";
-import { getMetaTranslation } from "@/app/Helpers/getMetaTranslation";
-import { getTranslation } from "@/app/Helpers/getTranslation";
+import { getMetaTranslation } from "@/Helpers/getMetaTranslation";
+import { getTranslation } from "@/Helpers/getTranslation";
 import { usePresident } from "@/hooks";
 import { useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect } from "react";

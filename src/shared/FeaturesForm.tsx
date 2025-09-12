@@ -1,5 +1,5 @@
 "use client";
-import { getTranslation } from "@/app/Helpers/getTranslation";
+import { getTranslation } from "@/Helpers/getTranslation";
 import { useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
