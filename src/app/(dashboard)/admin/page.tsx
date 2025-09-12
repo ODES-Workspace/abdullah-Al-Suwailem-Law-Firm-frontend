@@ -6,8 +6,8 @@ import {
   PresidentForm,
   FeaturesForm,
   ServicesForm,
+  AddPost,
 } from "@/shared";
-import AddServices from "@/shared/AddServices";
 import Select from "@/shared/Select";
 import { useState } from "react";
 
@@ -44,7 +44,7 @@ export default function Page() {
       {section === "services" && (
         <div className="flex flex-col gap-10">
           <ServicesForm />
-          <AddServices />
+          <AddPost type="services" title={false} />
         </div>
       )}
     </div>
