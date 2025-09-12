@@ -136,7 +136,7 @@ export default function FeaturesForm() {
                   height={100}
                   src={imagePreview}
                   alt="Preview"
-                  className="w-32 h-32 object-cover rounded-xl border border-primary"
+                  className="w-32 h-32 p-2 object-contain rounded-xl border border-primary"
                   // Add unoptimized prop for external URLs
                   unoptimized={imagePreview.startsWith("http")}
                 />
