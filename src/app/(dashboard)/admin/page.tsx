@@ -30,8 +30,8 @@ const OPTIONS = [
 export default function Page() {
   const [section, setSection] = useState("hero");
   return (
-    <div className="p-5 flex flex-col gap-10">
-      <div className="flex justify-between items-center">
+    <div className="flex flex-col gap-10">
+      <div className="flex justify-between ">
         <div className="text text-3xl font-bold">إدارة المحتوى</div>
         <Select
           options={OPTIONS}

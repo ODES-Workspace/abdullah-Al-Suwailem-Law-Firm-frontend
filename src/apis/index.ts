@@ -8,3 +8,4 @@ export { default as getPartners } from "./getPartners";
 export { default as getAbout } from "./getAbout";
 export { default as getMission } from "./getMission";
 export { default as getVission } from "./getVission";
+export { default as getPost } from "./getPost";

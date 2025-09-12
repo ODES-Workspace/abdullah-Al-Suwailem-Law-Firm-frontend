@@ -1,7 +1,8 @@
+import { getPost } from "@/apis";
 import createPost from "@/apis/createPost";
 import deletePost from "@/apis/deletePost";
 import updatePost from "@/apis/updatePost";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 export const useAddPost = (queryKey: string) => {
@@ -46,5 +47,12 @@ export const useDeletePost = (queryKey: string) => {
       console.log(error);
       toast.error("حدث خطأ ما، حاول مرة أخرى");
     },
+  });
+};
+
+export const usePost = (type: string) => {
+  return useQuery({
+    queryKey: [type],
+    queryFn: () => getPost({ type }),
   });
 };
