@@ -4,12 +4,13 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '64.226.117.146',
-        port: '8080',
-        pathname: '/storage/uploads/**',
+        protocol: "http",
+        hostname: "64.226.117.146",
+        port: "8080",
+        pathname: "/storage/uploads/**",
       },
     ],
+    unoptimized: true,
   },
 };
 
