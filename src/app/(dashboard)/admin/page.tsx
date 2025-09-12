@@ -44,7 +44,7 @@ export default function Page() {
       {section === "services" && (
         <div className="flex flex-col gap-10">
           <ServicesForm />
-          <AddPost type="services" title={false} />
+          <AddPost type="services" />
         </div>
       )}
     </div>

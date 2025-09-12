@@ -1,7 +1,7 @@
 "use client";
 import { getTranslation } from "@/Helpers/getTranslation";
 import { getImageUrl } from "@/Helpers/getImageUrl";
-import { useUpdatePost } from "@/hooks/usePost";
+import { useDeletePost, useUpdatePost } from "@/hooks/usePost";
 import React, { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
@@ -41,6 +41,15 @@ export default function ServicesForm() {
   const { register, handleSubmit, reset, setValue } = useForm<FormValues>({});
 
   const { mutate, isPending } = useUpdatePost();
+
+  const { mutate: deletePost } = useDeletePost("services");
+
+  function handleDelete() {
+    if (selectedId && selectedItem) {
+      deletePost(selectedId);
+      setSelectedId(data[0].id || 0);
+    }
+  }
 
   const selectedItem = data?.find((f: Item) => f.id === selectedId);
 
@@ -175,7 +184,14 @@ export default function ServicesForm() {
               </div>
             )}
           </div>
-          <div className="col-span-2 flex justify-end ">
+          <div className="col-span-2 flex gap-4 items-center justify-end">
+            <button
+              type="button"
+              onClick={handleDelete}
+              className="bg-red-500 text-white py-2 px-10 rounded-4xl cursor-pointer"
+            >
+              حذف الخدمة
+            </button>
             <button
               type="submit"
               disabled={isPending}
