@@ -85,7 +85,7 @@ export default function HeroForm() {
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="text-lg max-w-[1000px] grid-cols-2 grid gap-6"
+        className="text-lg max-w-[1000px] grid-cols-2 flex flex-col lg:grid gap-6"
       >
         <FormField register={register} name="title_ar" label="العنوان  (AR)" />
         <FormField register={register} name="title_en" label="العنوان  (EN)" />

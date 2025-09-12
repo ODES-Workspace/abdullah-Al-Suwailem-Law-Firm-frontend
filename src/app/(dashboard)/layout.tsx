@@ -11,7 +11,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="grid grid-cols-[auto_1fr] h-[100vh] " dir="rtl">
+    <div
+      className=" grid grid-rows-[90px_1fr] lg:grid-rows-1 lg:grid-cols-[auto_1fr] h-[100vh]  "
+      dir="rtl"
+    >
       <DashboardSidebar />
       <div className="overflow-y-auto p-5">{children}</div>
     </div>

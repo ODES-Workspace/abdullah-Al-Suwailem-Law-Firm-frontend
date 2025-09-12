@@ -31,8 +31,8 @@ export default function Page() {
   const [section, setSection] = useState("hero");
   return (
     <div className="flex flex-col gap-10">
-      <div className="flex justify-between ">
-        <div className="text text-3xl font-bold">إدارة المحتوى</div>
+      <div className="flex justify-between gap-2 flex-wrap">
+        <div className="text  text-xl lg:text-3xl font-bold">إدارة المحتوى</div>
         <Select
           options={OPTIONS}
           variant="secondary"

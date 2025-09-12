@@ -180,12 +180,12 @@ export default function PresidentForm() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-primary mb-6">
+      <h1 className=" text-2xl font-bold text-primary mb-6">
         تعديل محتوى كلمة الرئيس
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="text-lg max-w-[1000px] grid-cols-2 grid gap-6"
+        className="text-lg max-w-[1000px] flex flex-col lg:grid-cols-2 lg:grid gap-6"
       >
         {/*  */}
 

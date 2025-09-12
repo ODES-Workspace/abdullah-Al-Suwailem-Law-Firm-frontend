@@ -63,7 +63,7 @@ export default function Select({
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "text-2xl w-full flex items-center justify-between cursor-pointer text-gray",
+          "text-lg lg:text-2xl w-full flex items-center justify-between cursor-pointer text-gray",
 
           variant === "secondary" && "border-b-gray",
           isOpen || SELECTED ? "border-b-primary" : "border-b-gray",

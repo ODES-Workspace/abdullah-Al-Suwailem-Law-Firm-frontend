@@ -167,7 +167,7 @@ export default function UpdatePost({
       {selectedItem && (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="text-lg max-w-[1000px] grid-cols-2 grid gap-6"
+          className="text-lg max-w-[1000px] flex flex-col lg:grid-cols-2 lg:grid gap-6"
         >
           {title && (
             <>
@@ -225,7 +225,7 @@ export default function UpdatePost({
               )}
             </div>
           )}
-          <div className="col-span-2 flex gap-4 items-center justify-end">
+          <div className="col-span-2 flex gap-4 items-center justify-end  flex-wrap">
             {remove && (
               <button
                 type="button"

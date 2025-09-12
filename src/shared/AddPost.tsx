@@ -97,7 +97,7 @@ export default function AddPost({
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="text-lg max-w-[1000px] grid-cols-2 grid gap-6"
+        className="text-lg max-w-[1000px] flex flex-col lg:grid-cols-2 lg:grid gap-6"
       >
         {title && (
           <>
