@@ -29,7 +29,7 @@ export default function PresidentForm() {
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
-  const { mutate, isPending } = useUpdatePost();
+  const { mutate, isPending } = useUpdatePost("president");
 
   useEffect(() => {
     if (data) {

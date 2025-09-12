@@ -21,7 +21,7 @@ export default function HeroForm() {
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
-  const { mutate, isPending } = useUpdatePost();
+  const { mutate, isPending } = useUpdatePost("hero");
 
   useEffect(() => {
     if (data) {

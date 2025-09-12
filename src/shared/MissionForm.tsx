@@ -17,7 +17,7 @@ export default function MissionForm() {
 
   const { register, handleSubmit, reset } = useForm<FormValues>({});
 
-  const { mutate, isPending } = useUpdatePost();
+  const { mutate, isPending } = useUpdatePost("mission");
 
   useEffect(() => {
     if (data) {

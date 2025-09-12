@@ -38,7 +38,7 @@ export default function FeaturesForm() {
 
   const { register, handleSubmit, reset, setValue } = useForm<FormValues>({});
 
-  const { mutate, isPending } = useUpdatePost();
+  const { mutate, isPending } = useUpdatePost("features");
 
   const selectedItem = data?.find((f: Item) => f.id === selectedId);
 
