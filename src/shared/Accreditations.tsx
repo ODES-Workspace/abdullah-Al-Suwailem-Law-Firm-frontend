@@ -22,7 +22,7 @@ export default function Accreditations() {
           {lang === "ar" ? "الإعتمادات" : "Accreditations"}
         </div>
         <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-          {data.map((a: Item) => {
+          {data?.map((a: Item) => {
             const translation = a?.translations?.find(
               (t: Translation) => t.locale === lang
             );
