@@ -1,10 +1,12 @@
 "use client";
 import { useContextProvider } from "@/context/Context";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
   const { lang } = useContextProvider();
+  const { handleModelDisplay } = useContextProvider();
 
   const content = {
     sections: lang === "ar" ? "الاقسام" : "Sections",
@@ -34,8 +36,8 @@ export default function Footer() {
     district: lang === "ar" ? "الحي :  القيروان" : "District: Al Qirawan",
     street:
       lang === "ar"
-        ? "الطريق : شارع الأمير محمد بن سعد بن عبدالعزيز •⁠  ⁠رقم المبنى : 6273"
-        : "Street: Prince Mohammed Bin Saad Bin Abdulaziz St. •⁠  ⁠Building No.: 6273",
+        ? "الطريق : الرياض – القيروان – شارع الأمير محمد بن سعد بن عبدالعزيز، مبنى 6273، الرقم الفرعي 2788، الرمز البريدي 13531"
+        : "Street: Riyadh – Al Qirawan – Prince Mohammed Bin Saad Bin Abdulaziz Road, Building 6273, Unit 2788, P.O. Box 13531",
     mapLink:
       lang === "ar"
         ? "اضفط هنا للموقع علي الخريطة"
@@ -55,11 +57,11 @@ export default function Footer() {
               {content.sections}
             </div>
             <div className="text-sm grid grid-cols-2 gap-2">
-              <a href="#">{content.home}</a>
-              <a href="#">{content.about}</a>
-              <a href="#">{content.values}</a>
-              <a href="#">{content.fields}</a>
-              <a href="#">{content.accreditations}</a>
+              <Link href="/home">{content.home}</Link>
+              <Link href="/about">{content.about}</Link>
+              <Link href="home/#features">{content.values}</Link>
+              <Link href="home/#fields">{content.fields}</Link>
+              <Link href="home/#accreditations">{content.accreditations}</Link>
             </div>
           </div>
 
@@ -68,15 +70,60 @@ export default function Footer() {
               {content.services}
             </div>
             <div className="text-sm grid grid-cols-2 gap-2">
-              <a href="#">{content.litigation}</a>
-              <a href="#">{content.legalConsult}</a>
-              <a href="#">{content.drafting}</a>
-              <a href="#">{content.inheritance}</a>
-              <a href="#">{content.mediation}</a>
-              <a href="#">{content.procedures}</a>
-              <a href="#">{content.guardianship}</a>
-              <a href="#">{content.notarization}</a>
-              <a href="#">{content.clientRegs}</a>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.litigation}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.legalConsult}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.drafting}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.inheritance}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.mediation}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.procedures}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.guardianship}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.notarization}
+              </span>
+              <span
+                onClick={() => handleModelDisplay()}
+                className="cursor-pointer"
+              >
+                {content.clientRegs}
+              </span>
             </div>
           </div>
 
@@ -85,14 +132,14 @@ export default function Footer() {
               {content.followUs}
             </div>
             <div className="flex gap-2 items-center">
-              <a href="#" className="p-2 bg-white/30 rounded-lg">
+              {/* <a href="#" className="p-2 bg-white/30 rounded-lg">
                 <Image
                   src="/instagram-white.svg"
                   width={20}
                   height={20}
                   alt="instagram"
                 />
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/company/fs-law-firm/"
                 className="p-2 bg-white/30 rounded-lg"
@@ -125,17 +172,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex text-center lg:text-start flex-col gap-4 lg:flex-row lg:gap-[64px] justify-center items-center mb-4 text-white text-sm">
+        <div className="flex text-center lg:text-start flex-col gap-4 lg:flex-row  lg:justify-between justify-center items-center mb-4 text-white text-sm">
           <div>{content.city}</div>
           <div>{content.district}</div>
           <div>{content.street}</div>
-          <a
-            href="bing.com/maps?where=الرياض+-+حي+القيروان+-+طريق+الملك+سلمان+بن+عبد+العزيز+-+خلف+الهيئة+العامة+للولاية+على+أموال+القاصرين%2C+مكتب+رقم+5%2C+Riyadh+%2C+SA&cp=29.845409~31.460037&lvl=11.0"
+          <Link
+            href="https://maps.app.goo.gl/SBoEms7oJ3b88i3cA?g_st=ic"
             className="underline flex gap-1 items-center"
           >
             <Image src="/map-marker.svg" width={24} height={24} alt="map" />
             {content.mapLink}
-          </a>
+          </Link>
         </div>
 
         <div className="flex justify-center items-center gap-2 flex-col">
