@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     env:
-      NEXT_PUBLIC_BASE_URL: 'https://fslf.sa'
+      NEXT_PUBLIC_BASE_URL: 'https://fslf.sa/api'
       
     steps:
       - name: Checkout repo
