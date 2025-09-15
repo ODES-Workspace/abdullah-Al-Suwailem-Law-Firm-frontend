@@ -90,7 +90,7 @@ export default function Fields() {
               1280: { slidesPerView: 4 },
             }}
           >
-            {data.map((f: Item, index: number) => {
+            {data?.map((f: Item, index: number) => {
               const translation = f?.translations?.find(
                 (t: Translation) => t.locale === lang
               );

@@ -1,0 +1,26 @@
+{
+  "name": "شركة فهد السويلم للمحاماة والاستشارات القانونية",
+  "short_name": "فهد السويلم للمحاماة",
+  "description": "شركة رائدة في مجال المحاماة والاستشارات القانونية في المملكة العربية السعودية",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#161616",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "ar",
+  "dir": "rtl"
+}

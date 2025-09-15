@@ -27,7 +27,7 @@ export default function Partners() {
           {lang === "ar" ? "شركاؤنا" : "Our Partners"}
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-3 items-center flex-wrap  ">
-          {data.map((p: Item) => {
+          {data?.map((p: Item) => {
             return (
               <div key={p.id}>
                 <Image

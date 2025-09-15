@@ -109,7 +109,7 @@ export default function RequestServiceForm() {
           </div>
           <p className="text-primary-500 max-w-[600px] ">
             {lang === "ar"
-              ? "الترافع والتقاضي - الإستشارات القانونية - الصياغة والمراجعة القانونية - الوساطة القانونية - الإجراءات القانونية - الحراسة القضائية - التوثيق."
+              ? "الترافع والتقاضي - الإستشارات القانون"
               : "Litigation and litigation - Legal consultations - Legal drafting and review - Legal mediation - Legal procedures - Judicial custody - Documentation."}
           </p>
         </div>{" "}
@@ -243,19 +243,19 @@ export default function RequestServiceForm() {
           <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
             {lang === "ar" ? (
               <div className="max-w-[300px] leading-wide">
-                الرياض _ القيروان _ شارع الأمير محمد بن سعد بن عبدالعزيز •⁠ ⁠رقم
-                المبنى : 6273
+                الرياض – القيروان – شارع الأمير محمد بن سعد بن عبدالعزيز، مبنى
+                6273، الرقم الفرعي 2788، الرمز البريدي 13531
               </div>
             ) : (
               <div className="max-w-[300px] leading-wide">
-                Riyadh _ Al-Qirawan _ Prince Mohammed bin Saad bin Abdulaziz
-                Street • Building No: 6273
+                Riyadh - Al Qirawan - Prince Mohammed bin Saad bin Abdulaziz
+                St., Building 6273, P.O. Box 2788, Zip Code 13531
               </div>
             )}
             <Image width={30} height={30} src="/location.svg" alt="map-icon" />
           </div>
           <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
-            <a href="mailto:help@company.sa">help@company.sa</a>
+            <a href="mailto:Info@fslf.sa">Info@fslf.sa</a>
             <Image
               width={30}
               height={30}
@@ -277,9 +277,9 @@ export default function RequestServiceForm() {
         </div>
         <div className="flex gap-2 justify-center itens-center">
           <div>{lang === "ar" ? "تابعنا على" : "Follow us on"}</div>
-          <a href="">
+          {/* <a href="">
             <Image src="/instagram.svg" width={20} height={20} alt="socials" />
-          </a>
+          </a> */}
           <a href="https://www.linkedin.com/company/fs-law-firm/">
             <Image src="/linkedIn.svg" width={20} height={20} alt="socials" />
           </a>
