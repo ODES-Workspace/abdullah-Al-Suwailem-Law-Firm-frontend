@@ -13,7 +13,7 @@ module.exports = {
       NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
       NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
       NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-      NEXT_PUBLIC_BASE_URL: 'https://fslf.sa/api'
+      NEXT_PUBLIC_BASE_URL: 'https://fslf.sa/backend'
     },
     error_file: '/var/www/law/logs/err.log',
     out_file: '/var/www/law/logs/out.log',
