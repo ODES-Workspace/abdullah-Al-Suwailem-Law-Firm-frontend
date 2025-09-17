@@ -6,7 +6,6 @@ import React from "react";
 
 export default function Footer() {
   const { lang } = useContextProvider();
-  const { handleModelDisplay } = useContextProvider();
 
   const content = {
     sections: lang === "ar" ? "الاقسام" : "Sections",
@@ -70,60 +69,33 @@ export default function Footer() {
               {content.services}
             </div>
             <div className="text-sm grid grid-cols-2 gap-2">
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.litigation}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.legalConsult}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
+              <a href="/services" className="cursor-pointer">
                 {content.drafting}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.inheritance}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.mediation}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.procedures}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.guardianship}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
-                {content.notarization}
-              </span>
-              <span
-                onClick={() => handleModelDisplay()}
-                className="cursor-pointer"
-              >
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.litigation}
+              </a>
+              <a href="/services" className="cursor-pointer">
                 {content.clientRegs}
-              </span>
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.mediation}
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.legalConsult}
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.inheritance}
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.guardianship}
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.notarization}
+              </a>
+              <a href="/services" className="cursor-pointer">
+                {content.procedures}
+              </a>
             </div>
           </div>
 
