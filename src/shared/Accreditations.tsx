@@ -21,7 +21,7 @@ export default function Accreditations() {
         <div className="text-3xl lg:text-5xl text-center font-bold text-primary-950">
           {lang === "ar" ? "الإعتمادات" : "Accreditations"}
         </div>
-        <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
+        <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-6">
           {data?.map((a: Item) => {
             const translation = a?.translations?.find(
               (t: Translation) => t.locale === lang
@@ -44,9 +44,9 @@ export default function Accreditations() {
                   className="mb-[10px]"
                 />
 
-                <div className="flex gap-1 flex-col">
+                <div className="flex gap-2 flex-col">
                   <div className="font-bold">{translation?.title}</div>
-                  <div className="text-sm">{translation?.description}</div>
+                  <div className="text-justify">{translation?.description}</div>
                 </div>
               </div>
             );

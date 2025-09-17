@@ -84,7 +84,7 @@ export default function PresidentsMessage({
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 text-justify">
             <div>{messagetitle}</div>
             <div>{messagefirst}</div>
             <div>{messagesecond}</div>
