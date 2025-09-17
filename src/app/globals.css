@@ -36,3 +36,7 @@ html[lang="en"] img[alt="field-arrow-icon"] {
     background-color: var(--color-primary-400);
   }
 }
+
+.swiper-wrapper {
+  align-items: center;
+}
