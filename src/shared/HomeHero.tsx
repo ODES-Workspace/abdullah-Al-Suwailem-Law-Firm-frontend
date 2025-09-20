@@ -52,7 +52,7 @@ export default function HomeHero() {
             </div>
             <div className="relative w-[200px] h-[200px] lg:w-[345px] lg:h-[345px] ">
               <Image
-                src={"/logo-white.svg"}
+                src={"/logo-green.svg"}
                 alt={translation?.title || ""}
                 fill
               />
