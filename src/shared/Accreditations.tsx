@@ -28,12 +28,13 @@ export default function Accreditations() {
             );
             return (
               <div key={a.id} className="flex flex-col ">
-                <div className="relative h-[50px] mb-6">
+                <div className="relative h-[50px] mb-6 flex justify-start">
                   <Image
                     src={getImageUrl(a.featured_image)}
                     alt={translation?.title || ""}
-                    fill
-                    className="!w-fit h-full "
+                    width={200}
+                    height={50}
+                    className="object-contain max-h-full w-auto"
                   />
                 </div>
                 <Image
