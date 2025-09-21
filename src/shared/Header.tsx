@@ -52,7 +52,7 @@ export default function Header() {
   }
 
   return (
-    <div className="xl:max-w-[1233px] shadow-primary mx-auto py-2.5 xl:py-5 px-5 xl:px-25 flex justify-between items-center bg-primary-400 xl:bg-white fixed z-10 w-full right-0 left-0 top-0 xl:top-12 xl:rounded-2xl">
+    <div className="xl:max-w-[1233px] shadow-primary mx-auto py-2.5 xl:py-5 px-5 xl:px-25 flex justify-between items-center bg-white fixed z-10 w-full right-0 left-0 top-0 xl:top-12 xl:rounded-2xl">
       <Image
         src="/menu.svg"
         width={20}
@@ -62,7 +62,7 @@ export default function Header() {
         onClick={() => handleOpenSidebar()}
       />
 
-      <div className="text-white xl:text-primary ">
+      <div className="text-primary ">
         <Logo className="h-[50px] w-[50px] xl:h-auto xl:w-auto" />
       </div>
 
@@ -104,7 +104,7 @@ export default function Header() {
           <div
             className={cn(
               lang === "ar" ? "right-0" : "left-0",
-              "xl:hidden absolute top-0 h-[100vh] p-4  w-[250px] bg-primary-50  shadow-primary z-50"
+              "xl:hidden absolute top-0 h-[100vh] p-4  w-[250px] bg-white  shadow-primary z-50"
             )}
           >
             <div className="flex justify-between items-center border-b border-primary pb-2 mb-6 ">
