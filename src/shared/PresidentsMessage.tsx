@@ -91,12 +91,12 @@ export default function PresidentsMessage({
             <div>{messagethird}</div>
           </div>
 
-          <Link
+          {/* <Link
             href={data?.[0]?.slug}
             className="bg-primary max-w-[230px] w-full py-3 text-center flex justify-center rounded-3xl underline text-white"
           >
             {lang === "ar" ? "اقرأ المزيد" : "Read More"}
-          </Link>
+          </Link> */}
         </div>
 
         <Image
