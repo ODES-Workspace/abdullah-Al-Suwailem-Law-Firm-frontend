@@ -266,7 +266,7 @@ export default function RequestServiceForm() {
           <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
             <div className="flex flex-col gap-1">
               <a href="tel:0500503828 " dir="ltr">
-                0500503828
+                0536571719 
               </a>
               <a href="tel:0500503828 " dir="ltr">
                 0557316611
