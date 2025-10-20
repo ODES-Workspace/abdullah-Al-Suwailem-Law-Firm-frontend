@@ -265,11 +265,11 @@ export default function RequestServiceForm() {
           </div>
           <div className="flex gap-3 items-center text-sm flex-col-reverse md:flex-row text-center ">
             <div className="flex flex-col gap-1">
-              <a href="tel:0536571719 " dir="ltr">
-                0536571719 
+              <a href="tel:+966536571719 " dir="ltr">
+                +966536571719
               </a>
-              <a href="tel:0557316611 " dir="ltr">
-                0557316611
+              <a href="tel:+996557316611 " dir="ltr">
+                +996557316611
               </a>
             </div>
             <Image width={30} height={30} src="/phone.svg" alt="phone-icon" />
